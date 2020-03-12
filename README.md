@@ -18,13 +18,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ----------------------------------------
 
-#### Must Check Links
+## Must Check Links
 - The Cloud Native Trail Map is CNCF's recommended path through the cloud native landscape. The cloud native landscape, serverless landscape, and member landscape are dynamically generated on this website:
     * [https://landscape.cncf.io](https://landscape.cncf.io)
 
 ----------------------------------------
 
-#### Docker Installation Tips
+## Docker Installation Tips
 - Installing on `Windows 10 (Pro or Enterprise)`:
     * This is the best experience on Windows, but due to OS feature requirements, it only works on the Pro and Enterprise editions of Windows 10 (with latest update rollups). We need to install [Docker for Windows](https://www.docker.com/docker-windows) from the Docker Store.
     * With this Edition we should use PowerShell for the best CLI experience.
