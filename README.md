@@ -15,6 +15,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ## Important Notes
 - [Must Check Links](#must-check-links)
 - [Docker Installation Tips](#docker-installation-tips)
+- [Theory](#theory)
 
 ----------------------------------------
 
@@ -98,3 +99,17 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - The best free online option is to use [play-with-docker.com](http://play-with-docker.com/), which will run one or more Docker instances inside our browser, and give us a terminal to use it with.
 - We can actually create multiple machines on it, and even use the URL to share the session with others in a sort of collaborative experience.
 - **It's only limitation really is it's time bombed to 4 hours, at which time it'll delete our servers.**
+
+----------------------------------------
+
+## Theory
+
+```diff
+- Difference between Containers and Virtual Machines (VMs)
+```
+- A VM provides an abstract machine that uses device drivers targeting the abstract machine, while a container provides an abstract OS.
+- A para-virtualized VM environment provides an abstract hardware abstraction layer (HAL) that requires HAL-specific device drivers.
+- Typically a VM will host multiple applications whose mix may change over time versus a container that will normally have a single application. However, it’s possible to have a fixed set of applications in a single container.
+- Containers provide a way to virtualize an OS so that multiple workloads can run on a single OS instance.
+- With VMs, the hardware is being virtualized to run multiple OS instances.
+- Containers’ speed, agility, and portability make them yet another tool to help streamline software development.
