@@ -107,6 +107,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```diff
 - Difference between Containers and Virtual Machines (VMs)
 ```
+- **Containers:**
+    * Containers aren't Mini-VM's.
+    * Containers are just processes. They are processes running in our host OS.
+    * Containers are limited to what resources they can access.
+    * Containers exit when process stops.
 - A VM provides an abstract machine that uses device drivers targeting the abstract machine, while a container provides an abstract OS.
 - A para-virtualized VM environment provides an abstract hardware abstraction layer (HAL) that requires HAL-specific device drivers.
 - Typically a VM will host multiple applications whose mix may change over time versus a container that will normally have a single application. However, it’s possible to have a fixed set of applications in a single container.
