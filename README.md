@@ -120,6 +120,22 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - With VMs, the hardware is being virtualized to run multiple OS instances.
 - Containers’ speed, agility, and portability make them yet another tool to help streamline software development.
 
+```diff
+- To see what's going on in containers
+```
+- List all processes in one container:
+    ```sh
+    docker container top
+    ```
+- To see details of specific container config:
+    ```sh
+    docker container inspect
+    ```
+- To see performance stats for all containers:
+    ```sh
+    docker container stats
+    ```
+
 ----------------------------------------
 
 ## Generic Examples
