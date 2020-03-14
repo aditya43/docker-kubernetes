@@ -169,5 +169,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         # To remove containers, specify their ids like below:
         docker container rm b520f9b00f89 5eaa2a2b09c6 c782914b7c66
     ```
+- To remove `Images` as well:
+    ```sh
+        # To remove images, specify their ids like below:
+        docker image rm b520f4389 5eaa22b09c6 c782432b7c66
+    ```
 
 ----------------------------------------
