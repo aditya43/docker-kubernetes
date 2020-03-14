@@ -16,6 +16,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Must Check Links](#must-check-links)
 - [Docker Installation Tips](#docker-installation-tips)
 - [Theory](#theory)
+- [Generic Examples](#generic-examples)
 
 ----------------------------------------
 
@@ -118,3 +119,55 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Containers provide a way to virtualize an OS so that multiple workloads can run on a single OS instance.
 - With VMs, the hardware is being virtualized to run multiple OS instances.
 - Containers’ speed, agility, and portability make them yet another tool to help streamline software development.
+
+----------------------------------------
+
+## Generic Examples
+
+```diff
++ Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
+```
+- **MySQL**:
+    * To run `MySQL`:
+        ```sh
+            docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
+        ```
+    * View logs to see generated random password for the `root` user. To view logs:
+        ```sh
+            docker container logs db # 'db' is the name we have given in above command.
+        ```
+    * Look for something like below line for the generated random password:
+        ```
+            2020-03-14 12:20:33+00:00 [Note] [Entrypoint]: GENERATED ROOT PASSWORD: ChooHxafdsasd2dsx1ouovo7aegha
+        ```
+- **httpd (Apache Server)**:
+    * To run `httpd`:
+        ```sh
+            docker container run -d -p 8080:80 --name webserver httpd
+        ```
+- **nginx**:
+    * To run `nginx`:
+        ```sh
+            docker container run -d -p 80:80 --name proxy nginx
+        ```
+- All containers are running by now. To list all running containers:
+    ```sh
+        docker container ls
+        # OR
+        docker ps   # Old command
+    ```
+- To clean these containers up:
+    ```sh
+        docker container stop   # Press TAB to get a list of all running containers
+        # OR
+        docker container stop proxy webserver db
+    ```
+- To remove these containers:
+    ```sh
+        docker container ls -a  # This will give list of all containers, even stopped ones.
+
+        # To remove containers, specify their ids like below:
+        docker container rm b520f9b00f89 5eaa2a2b09c6 c782914b7c66
+    ```
+
+----------------------------------------
