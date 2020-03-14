@@ -38,9 +38,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Install [Docker Tab Completions For PowerShell Plugin](https://github.com/matt9ucci/DockerCompletion).
 - Useful commands:
     ```sh
-        docker version
-        docker ps
-        docker info
+    docker version
+    docker ps
+    docker info
     ```
 
 ```diff
@@ -50,11 +50,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **NOTE FOR TOOLBOX USERS**: On localhost, all urls that use `http://localhost` , we'll need to replace with `http://192.168.99.100`
 - Useful commands:
     ```sh
-        docker version
-        docker-machine ls
-        docker-machine start
-        docker-machine help
-        docker-machine env default
+    docker version
+    docker-machine ls
+    docker-machine start
+    docker-machine help
+    docker-machine env default
     ```
 
 ```diff
@@ -63,11 +63,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - We'll want to install [Docker for Mac](https://www.docker.com/docker-mac), which is great. If we're on an older Mac with less than `OSX Yosemite 10.10.3`, we'll need to install the [Docker Toolbox](https://docs.docker.com/toolbox/overview/) instead.
 - Useful commands:
     ```sh
-        docker version
-        docker container
-        docker container run --
-        docker
-        docker pause
+    docker version
+    docker container
+    docker container run --
+    docker
+    docker pause
     ```
 
 ```diff
@@ -77,21 +77,21 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Prefer to use the Docker's automated script to add their repository and install all dependencies: `curl -sSL https://get.docker.com/ | sh` but we can also install in a more manual method by following specific instructions on the Docker Store for our distribution, like [this one for Ubuntu](https://store.docker.com/editions/community/docker-ce-server-ubuntu).
 - Useful commands:
     ```sh
-        # http://get.docker.com
-        curl -fsSL get.docker.com -o get-docker.sh
-        sh get-docker.sh
-        sudo usermod -aG docker bret
-        sudo docker version
-        docker version
-        sudo docker version
-        docker-machine version
-        # http://github.com/docker/compose
-        # http://github.com/docker/compose/releases
-        curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose- `uname -s `- `uname -m` >/usr/local/bin/docker-compose
-        docker-compose version
-        # http://github.com/docker/machine/releases
-        docker image
-        docker image ls --
+    # http://get.docker.com
+    curl -fsSL get.docker.com -o get-docker.sh
+    sh get-docker.sh
+    sudo usermod -aG docker bret
+    sudo docker version
+    docker version
+    sudo docker version
+    docker-machine version
+    # http://github.com/docker/compose
+    # http://github.com/docker/compose/releases
+    curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose- `uname -s `- `uname -m` >/usr/local/bin/docker-compose
+    docker-compose version
+    # http://github.com/docker/machine/releases
+    docker image
+    docker image ls --
     ```
 
 ```diff
@@ -130,49 +130,49 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **MySQL**:
     * To run `MySQL`:
         ```sh
-            docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
+        docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
         ```
     * View logs to see generated random password for the `root` user. To view logs:
         ```sh
-            docker container logs db # 'db' is the name we have given in above command.
+        docker container logs db # 'db' is the name we have given in above command.
         ```
     * Look for something like below line for the generated random password:
         ```
-            2020-03-14 12:20:33+00:00 [Note] [Entrypoint]: GENERATED ROOT PASSWORD: ChooHxafdsasd2dsx1ouovo7aegha
+        2020-03-14 12:20:33+00:00 [Note] [Entrypoint]: GENERATED ROOT PASSWORD: ChooHxafdsasd2dsx1ouovo7aegha
         ```
 - **httpd (Apache Server)**:
     * To run `httpd`:
         ```sh
-            docker container run -d -p 8080:80 --name webserver httpd
+        docker container run -d -p 8080:80 --name webserver httpd
         ```
 - **nginx**:
     * To run `nginx`:
         ```sh
-            docker container run -d -p 80:80 --name proxy nginx
+        docker container run -d -p 80:80 --name proxy nginx
         ```
 - All containers are running by now. To list all running containers:
     ```sh
-        docker container ls
-        # OR
-        docker ps   # Old command
+    docker container ls
+    # OR
+    docker ps   # Old command
     ```
 - To clean these containers up:
     ```sh
-        docker container stop   # Press TAB to get a list of all running containers
-        # OR
-        docker container stop proxy webserver db
+    docker container stop   # Press TAB to get a list of all running containers
+    # OR
+    docker container stop proxy webserver db
     ```
 - To remove these containers:
     ```sh
-        docker container ls -a  # This will give list of all containers, even stopped ones.
+    docker container ls -a  # This will give list of all containers, even stopped ones.
 
-        # To remove containers, specify their ids like below:
-        docker container rm b520f9b00f89 5eaa2a2b09c6 c782914b7c66
+    # To remove containers, specify their ids like below:
+    docker container rm b520f9b00f89 5eaa2a2b09c6 c782914b7c66
     ```
 - To remove `Images` as well:
     ```sh
-        # To remove images, specify their ids like below:
-        docker image rm b520f4389 5eaa22b09c6 c782432b7c66
+    # To remove images, specify their ids like below:
+    docker image rm b520f4389 5eaa22b09c6 c782432b7c66
     ```
 
 ----------------------------------------
