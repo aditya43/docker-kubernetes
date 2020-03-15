@@ -160,7 +160,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # In below command, '-p 80:80' means forward traffic of port 80 of 'host' to port 80 of container.
     docker container run -p 80:80 --name webhost -d nginx
     ```
-- To see which ports information of Containers i.e. which ports of `host` are forwarded to which ports of Container:
+- To see information about published ports for any Container i.e. which ports of Container are listening to which ports of `host`:
     ```sh
     # 'webhost' is the name of our already running nginx container.
     docker container port webhost
