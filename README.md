@@ -260,6 +260,38 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker image inspect IMAGE_NAME
     ```
 
+```diff
+- Docker Image tagging and pushing to Docker Hub
+```
+- Images don't technically have names. They have `tags`. When we do `docker image ls`, there's no `name column`, instead there is `tag` column.
+- We refer to Image with 3 distinct categories: `<user>/<repo>:<tag>`.
+    * `<repo>` is made of either an organisation name or username.
+- **Official Repositories** live at the `Root Namespace` of the registery, so they don't need account name in front of repo name.
+- `tag` is just a pointer to a specific image commit, and really could be anything into that repository.
+- To `re-tag` and existing image:
+    ```sh
+    # Assuming 'mysql' image already exists in our system.
+    docker image tag mysql adityahajare/mysql adityahajare/latestmysql adityahajare/additionaltagname
+    ```
+- `latest` tag doesn't always means latest version of that Image. It's just the default tag, but Image owners should assign it to the newest stable version.
+- To push our own Image:
+    ```sh
+    # Uploads changed layers to a image registery.
+    docker image push TAG_NAME
+    # For e.g.
+    docker image push adityahajare/mysql
+    ```
+- If we get `Access Denied` error, we need to login with our Docker Hub account. To login:
+    ```sh
+    docker login
+    ```
+- `docker login` defaults to logging into a `Docker Hub`, but we can modify by adding `server url`. Do following to see default:
+    ```sh
+    cat .docker/config.json
+    ```
+    * **NOTE:** `Docker For MAC` now stores this auth into `Keychain` for better security.
+- **Always logout from shared machines or servers when done, to protect our account.**
+
 ----------------------------------------
 
 ## Generic Examples
