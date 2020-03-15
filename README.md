@@ -23,6 +23,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ## Must Check Links
 
+- How DNS works? DNS basics:
+    * [https://howdns.works](https://howdns.works)
+    * [https://dyn.com/blog/dns-why-its-important-how-it-works](https://dyn.com/blog/dns-why-its-important-how-it-works)
+- Round-Robin DNS, what is it:
+    * [https://en.wikipedia.org/wiki/Round-robin_DNS](https://en.wikipedia.org/wiki/Round-robin_DNS)
 - The Cloud Native Trail Map is CNCF's recommended path through the cloud native landscape. The cloud native landscape, serverless landscape, and member landscape are dynamically generated on this website:
     * [https://landscape.cncf.io](https://landscape.cncf.io)
 - MacOS shell tweaking:
