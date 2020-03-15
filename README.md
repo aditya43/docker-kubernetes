@@ -293,6 +293,15 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **Always logout from shared machines or servers when done, to protect our account.**
 - To make a `private` repository, login to Docker Hub and create the private repo first and then push Image to it.
 
+```diff
+- Dockerfile
+```
+- `Dockerfile` is not a shell script or a batch file it's a totally different language of file that's unique to Docker and the default name is `Dockerfile` with a capital `D`.
+- From a command line, whenever we need to deal with a `Dockerfile` using the `docker` command, we can actually use the `-f` (which is common amongst lot of tools with Docker) option to specify a different file than default `Dockerfile`. For e.g.
+    ```sh
+    docker build -f SOME_DOCKER_FILE
+    ```
+
 ----------------------------------------
 
 ## Generic Examples
