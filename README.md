@@ -13,7 +13,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ----------------------------------------
 
 ## Important Notes
-
 - [Must Check Links](#must-check-links)
 - [Docker Installation Tips](#docker-installation-tips)
 - [Theory](#theory)
@@ -22,7 +21,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ----------------------------------------
 
 ## Must Check Links
-
 - How DNS works? DNS basics:
     * [https://howdns.works](https://howdns.works)
     * [https://dyn.com/blog/dns-why-its-important-how-it-works](https://dyn.com/blog/dns-why-its-important-how-it-works)
@@ -44,7 +42,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ----------------------------------------
 
 ## Docker Installation Tips
-
 ```diff
 + Installing on Windows 10 (Pro or Enterprise)
 ```
@@ -119,7 +116,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ----------------------------------------
 
 ## Theory
-
 ```diff
 - Important Points To Remember
 ```
@@ -225,10 +221,18 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - We must manually expose ports using `-p` option, which is better default security!
 - This gets even better with `Swarm` and `Overlay Networks`.
 
+```diff
+- Images
+```
+- `Images` are nothing but application binaries and dependencies for our apps and the metada - `how to run it`.
+- `Official Definition`: An image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a Container runtime.
+- Inside an `Image`, there's no complete OS. No kernel and kernel modules (e.g. drivers). It contains just binaries that our application needs. It is because the `host` provides the `kernel`.
+- Image can be small as one file (our app binary) like a `golang` static binary.
+- Or an Image can be big as a `Ubuntu distro` with `apt` and `Apache`, `PHP` and more installed.
+
 ----------------------------------------
 
 ## Generic Examples
-
 ```diff
 + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
 ```
