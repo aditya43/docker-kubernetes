@@ -124,6 +124,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Docker defaults the `hostname` to the Container's name, but we can also set aliases.
 - Containers shouldn't rely on IP's for inter-communication.
 - Make sure that we are always creating custom networks instead of using default ones.
+- `Alpine` is a destribution of linux which is very very small in size. i.e. less than `5 mb`.
 
 ```diff
 - Difference between Containers and Virtual Machines (VMs)
@@ -222,13 +223,21 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - This gets even better with `Swarm` and `Overlay Networks`.
 
 ```diff
-- Images
+- What are Images
 ```
 - `Images` are nothing but application binaries and dependencies for our apps and the metada - `how to run it`.
 - `Official Definition`: An image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a Container runtime.
 - Inside an `Image`, there's no complete OS. No kernel and kernel modules (e.g. drivers). It contains just binaries that our application needs. It is because the `host` provides the `kernel`.
 - Image can be small as one file (our app binary) like a `golang` static binary.
 - Or an Image can be big as a `Ubuntu distro` with `apt` and `Apache`, `PHP` and more installed.
+- Images aren't necessarily named, Images are `tagged`. And a version of an Image can have more than 1 `tag`.
+- To pull the specific version of Image:
+    ```sh
+    docker pull nginx:1.17.9
+    # Or to pull the latest version of any image
+    docker pull nginx:latest
+    ```
+- **In production**, always lock version by specifying exact version number.
 
 ----------------------------------------
 
