@@ -191,4 +191,24 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker image rm b520f4389 5eaa22b09c6 c782432b7c66
     ```
 
+```diff
++ To get a Shell inside Container
+```
+- To start new Container interactively:
+    ```sh
+    docker container run -it
+    ```
+- To run additional command in existing container:
+    ```sh
+    docker container exec -it
+    ```
+- For e.g. To start a `httpd` container interactively and get a `bash` shell inside it:
+    ```sh
+    docker container run -it --name webserver httpd bash
+    ```
+- For e.g. To get a `bash` shell inside already running `nginx` Container named as `proxy`:
+    ```sh
+    docker container exec -it proxy bash
+    ```
+
 ----------------------------------------
