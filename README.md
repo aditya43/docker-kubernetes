@@ -264,6 +264,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Docker Image tagging and pushing to Docker Hub
 ```
 - Images don't technically have names. They have `tags`. When we do `docker image ls`, there's no `name column`, instead there is `tag` column.
+- `latest` tag doesn't always means latest version of that Image. It's just the default tag, but Image owners should assign it to the newest stable version.
 - We refer to Image with 3 distinct categories: `<user>/<repo>:<tag>`.
     * `<repo>` is made of either an organisation name or username.
 - **Official Repositories** live at the `Root Namespace` of the registery, so they don't need account name in front of repo name.
@@ -273,7 +274,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # Assuming 'mysql' image already exists in our system.
     docker image tag mysql adityahajare/mysql adityahajare/latestmysql adityahajare/additionaltagname
     ```
-- `latest` tag doesn't always means latest version of that Image. It's just the default tag, but Image owners should assign it to the newest stable version.
 - To push our own Image:
     ```sh
     # Uploads changed layers to a image registery.
@@ -291,6 +291,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```
     * **NOTE:** `Docker For MAC` now stores this auth into `Keychain` for better security.
 - **Always logout from shared machines or servers when done, to protect our account.**
+- To make a `private` repository, login to Docker Hub and create the private repo first and then push Image to it.
 
 ----------------------------------------
 
