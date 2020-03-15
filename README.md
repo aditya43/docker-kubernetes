@@ -25,6 +25,14 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://landscape.cncf.io](https://landscape.cncf.io)
 - MacOS shell tweaking:
     * [https://www.bretfisher.com/shell](https://www.bretfisher.com/shell)
+- MacOS - Commands for getting into local Docker VM:
+    * [https://www.bretfisher.com/docker-for-mac-commands-for-getting-into-local-docker-vm](https://www.bretfisher.com/docker-for-mac-commands-for-getting-into-local-docker-vm)
+- Windows - Commands for getting into local Docker Moby VM:
+    * [https://www.bretfisher.com/getting-a-shell-in-the-docker-for-windows-vm](https://www.bretfisher.com/getting-a-shell-in-the-docker-for-windows-vm)
+- Docker Internals - Cgroups, namespaces, and beyond: what are containers made from?:
+    * [https://www.youtube.com/watch?v=sK5i-N34im8&feature=youtu.be&list=PLBmVKD7o3L8v7Kl_XXh3KaJl9Qw2lyuFl](https://www.youtube.com/watch?v=sK5i-N34im8&feature=youtu.be&list=PLBmVKD7o3L8v7Kl_XXh3KaJl9Qw2lyuFl)
+- Windows Containers and Docker: 101:
+    * [https://www.youtube.com/watch?v=066-9yw8-7c](https://www.youtube.com/watch?v=066-9yw8-7c)
 
 ----------------------------------------
 
