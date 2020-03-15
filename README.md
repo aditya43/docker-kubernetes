@@ -243,12 +243,21 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Image Layers
 ```
 - This is a fundamental concept about how Docker works.
+- Images are made up of file system changes and metadata.
+- Each layer is uniquely identified (SHA) and only stored once on a `host`. This saves storage space on `host` and transfer time on `push/pull`.
+- A Container is just a single `read/write layer` on top of Image.
 - Docker uses a `Union File System` to present it's series of file system changes as an actual file system.
 - Container runs as an additional layer on top of an Image.
 - Images are designed using `Union File System` concept to make layers about the changes.
 - Use `docker history` command to see layers of changes made in image:
     ```sh
     docker history IMAGE_NAME
+    ```
+- Each layer has a unique SHA associated with it.
+- **Copy on Write:** When a change is made into some file in base image, Docker will copy that file from base image and put it in Container layer itself.
+- To see the JSON metadata of the Image:
+    ```sh
+    docker image inspect IMAGE_NAME
     ```
 
 ----------------------------------------
