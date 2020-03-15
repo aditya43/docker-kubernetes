@@ -144,6 +144,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker container stats
     ```
 
+```diff
+- Docker netwroks concepts for Private and Public communications
+```
+- When we start a Container, in the background we are connecting to a particular Docker network. And by default that is the `bridge` network.
+- Each Container is connected to a private virtual network `bridge`.
+- Each virtual network routes through `NAT Firewall` on host IP.
+
 ----------------------------------------
 
 ## Generic Examples
