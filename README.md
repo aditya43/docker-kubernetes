@@ -114,6 +114,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ## Theory
 
 ```diff
+- Important Points To Remember
+```
+- **Forget IP's**: Static IP's and using IP's for talking to Containers is an `anti-pattern`. Always try best to avoid it!
+
+```diff
 - Difference between Containers and Virtual Machines (VMs)
 ```
 - **Containers:**
