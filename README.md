@@ -117,6 +117,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Important Points To Remember
 ```
 - **Forget IP's**: Static IP's and using IP's for talking to Containers is an `anti-pattern`. Always try best to avoid it!
+- Docker daemon has a built-in DNS server that Containers use by default.
+- Docker defaults the `hostname` to the Container's name, but we can also set aliases.
+- Containers shouldn't rely on IP's for inter-communication.
+- Make sure that we are always creating custom networks instead of using default ones.
 
 ```diff
 - Difference between Containers and Virtual Machines (VMs)
