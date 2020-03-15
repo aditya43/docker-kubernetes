@@ -239,6 +239,18 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```
 - **In production**, always lock version by specifying exact version number.
 
+```diff
+- Image Layers
+```
+- This is a fundamental concept about how Docker works.
+- Docker uses a `Union File System` to present it's series of file system changes as an actual file system.
+- Container runs as an additional layer on top of an Image.
+- Images are designed using `Union File System` concept to make layers about the changes.
+- Use `docker history` command to see layers of changes made in image:
+    ```sh
+    docker history IMAGE_NAME
+    ```
+
 ----------------------------------------
 
 ## Generic Examples
