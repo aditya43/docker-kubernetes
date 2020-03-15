@@ -131,7 +131,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```sh
     docker container inspect
     ```
-- To see performance stats for all containers:
+- To see live performance stats for all containers:
     ```sh
     docker container stats
     ```
