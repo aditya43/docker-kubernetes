@@ -171,6 +171,31 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker container inspect --format "{{ .NetworkSettings.IPAddress }}" webhost
     ```
 
+```diff
+- Docker netwroks CLI management of Virtual Networks
+```
+- To list/show all networks:
+    ```sh
+    docker network ls
+    ```
+
+- To `inspect` a network:
+    ```sh
+    docker network inspect NETWORK_ID
+    ```
+- To `create` a network:
+    ```sh
+    docker network create --driver
+    ```
+- To `attach` a network to Container:
+    ```sh
+    docker network connect
+    ```
+- To `detach/disconnect` a network from Container:
+    ```sh
+    docker network disconnect
+    ```
+
 ----------------------------------------
 
 ## Generic Examples
