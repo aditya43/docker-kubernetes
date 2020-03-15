@@ -170,6 +170,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # 'webhost' is the name of our already running nginx container.
     docker container inspect --format "{{ .NetworkSettings.IPAddress }}" webhost
     ```
+- `--network bridge` is the default Docker Virtual Network `NAT'ed` behind the `host` ip.
+- `--network host` gains performace by skipping virtual networks but sacrifices security of container model.
+- `--network none` removes `eth0` and only leaves us with `localhost` interface in Container.
+- `Network Drivers` are built-in or 3rd party extensions that gives us `Virtual Network` features.
 
 ```diff
 - Docker netwroks CLI management of Virtual Networks
