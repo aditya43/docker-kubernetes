@@ -200,6 +200,15 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker network disconnect
     ```
 
+```diff
+- Docker networks: Default Security
+```
+- While creating apps, we should make `frontend, backend` sit on same Docker network.
+- Make sure that their (frontend, backend) inter-communication never leaves host.
+- All externally exposed ports are closed by default in Containers.
+- We must manually expose ports using `-p` option, which is better default security!
+- This gets even better with `Swarm` and `Overlay Networks`.
+
 ----------------------------------------
 
 ## Generic Examples
