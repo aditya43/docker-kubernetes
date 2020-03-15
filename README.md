@@ -150,6 +150,26 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - When we start a Container, in the background we are connecting to a particular Docker network. And by default that is the `bridge` network.
 - Each Container is connected to a private virtual network `bridge`.
 - Each virtual network routes through `NAT Firewall` on host IP.
+- All Containers on a virtual network can talk to each other without `-p`.
+- **Best Practice** is to create a new virtual network for each app. For e.g.
+    * Network `my_api` for `mongo` and `nodejs` containers.
+    * Network `my_web_app` for `mysql` and `php/apache` containers.
+- Use different `Docker Network Drivers` to gain new abilities.
+- **`-p` is always in `HOST:CONTAINER` format.** For e.g.
+    ```sh
+    # In below command, '-p 80:80' means forward traffic of port 80 of 'host' to port 80 of container.
+    docker container run -p 80:80 --name webhost -d nginx
+    ```
+- To see which ports information of Containers i.e. which ports of `host` are forwarded to which ports of Container:
+    ```sh
+    # 'webhost' is the name of our already running nginx container.
+    docker container port webhost
+    ```
+- To know the IP address of running Container using `inspect` command:
+    ```sh
+    # 'webhost' is the name of our already running nginx container.
+    docker container inspect --format "{{ .NetworkSettings.IPAddress }}" webhost
+    ```
 
 ----------------------------------------
 
