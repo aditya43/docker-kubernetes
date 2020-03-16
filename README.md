@@ -362,7 +362,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Useful YouTube video about `prune`: [https://youtu.be/_4QzP7uwtvI](https://youtu.be/_4QzP7uwtvI)
 
 ```diff
-+ To cleanup all dangling images
++ To cleanup all dangling images:
 ```
 ```sh
     # We can use '-a' option to clean up all images.
@@ -370,14 +370,14 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```
 
 ```diff
-+ To cleanup everything
++ To cleanup everything:
 ```
 ```sh
     docker system prune
 ```
 
 ```diff
-+ To see space usage
++ To see space usage:
 ```
 ```sh
     docker system df
