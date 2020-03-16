@@ -326,9 +326,20 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * It doesn't expose anything from the Container to a `virtual network` unless we list it under `Expose` block.
     * `Expose` command does not mean those `ports` will be opened automatically on our `host`.
     * We still have to use `-p` with `docker run` to open up these ports.
+    * By specifying `ports` under `Expose` block, we are only allowing Containers to receive packets comming at these ports.
 - `CMD`:
     * It is a required parameter in every `Dockerfile`.
     * It is the final command that will be run every time we launch a new Container from the Image, or every time we restart a stopped Container.
+
+```diff
+- To build Image from Dockerfile
+```
+- To build an Image from `Dockerfile`:
+    ```sh
+    # '-t' to specify tag name.
+    # '.' says Dockerfile is in current directory location.
+    docker image build -t SOME_TAG_NAME .
+    ```
 
 ----------------------------------------
 
