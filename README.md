@@ -312,16 +312,16 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * One of the main benifits to use these distributions in Containers is to use their `package distribution systems` to install whatever software we need in our packages.
     * `Package Manager`: `package managers` like `apt` and `yum` are one of the reasons to build Containers from `debian`, `ubuntu`, `fedora` or `centos`.
 - `Env`:
-    * Optional block.
+    * **Optional** block.
     * It's a way to set environment variables.
     * One reason they were chosen as preferred way to inject `key/value` is they work everywhere, on every OS and config.
 - `Run`:
-    * Optional block.
+    * **Optional** block.
     * Used to execute shell commands inside Container. It is used when we need to install software with a package repository, on we need to do some `unzipping` or some file edits inside the Container itself.
     * `Run` commands can also run `shell scripts`, or any commands that we can access from inside the Container.
     * `Dockerfile` can have multiple `Run` command blocks.
 - `Expose`:
-    * Optional block.
+    * **Optional** block.
     * By default no `TCP` or `UDP` ports are open inside a Container.
     * It doesn't expose anything from the Container to a `virtual network` unless we list it under `Expose` block.
     * `Expose` command does not mean those `ports` will be opened automatically on our `host`.
