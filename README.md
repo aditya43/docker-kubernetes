@@ -16,6 +16,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Must Check Links](#must-check-links)
 - [Docker Installation Tips](#docker-installation-tips)
 - [Theory](#theory)
+- [Cleaning Up Docker](#cleaning-up-docker)
 - [Generic Examples](#generic-examples)
 
 ----------------------------------------
@@ -26,6 +27,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://dyn.com/blog/dns-why-its-important-how-it-works](https://dyn.com/blog/dns-why-its-important-how-it-works)
 - Round-Robin DNS, what is it:
     * [https://en.wikipedia.org/wiki/Round-robin_DNS](https://en.wikipedia.org/wiki/Round-robin_DNS)
+- Official Docker Image specifications:
+    * [https://github.com/moby/moby/blob/master/image/spec/v1.2.md](https://github.com/moby/moby/blob/master/image/spec/v1.2.md)
+    * [https://github.com/moby/moby/tree/master/image/spec](https://github.com/moby/moby/tree/master/image/spec)
+- List of official Docker Images:
+    * [https://github.com/docker-library/official-images/tree/master/library](https://github.com/docker-library/official-images/tree/master/library)
+    * [https://github.com/docker-library/official-images](https://github.com/docker-library/official-images)
 - The Cloud Native Trail Map is CNCF's recommended path through the cloud native landscape. The cloud native landscape, serverless landscape, and member landscape are dynamically generated on this website:
     * [https://landscape.cncf.io](https://landscape.cncf.io)
 - MacOS shell tweaking:
@@ -347,6 +354,40 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # '.' says Dockerfile is in current directory location.
     docker image build -t SOME_TAG_NAME .
     ```
+
+----------------------------------------
+
+## Cleaning Up Docker
+- We can use `prune` commands to clean up `images`, `volumes`, `build cache`, and `containers`.
+- Useful YouTube video about `prune`: [https://youtu.be/_4QzP7uwtvI](https://youtu.be/_4QzP7uwtvI)
+
+```diff
++ To cleanup all dangling images
+```
+```sh
+    # We can use '-a' option to clean up all images.
+    docker image prune
+```
+
+```diff
++ To cleanup everything
+```
+```sh
+    docker system prune
+```
+
+```diff
++ To see space usage
+```
+```sh
+    docker system df
+```
+
+- If we're using `Docker Toolbox`, the `Linux VM` won't auto-shrink. We'll need to delete it and re-create (make sure anything in docker containers or volumes are backed up). We can recreate the `toolbox default VM` with following commands:
+```sh
+    docker-machine rm
+    docker-machine create
+```
 
 ----------------------------------------
 
