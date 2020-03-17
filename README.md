@@ -15,9 +15,40 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ## Important Notes
 - [Must Check Links](#must-check-links)
 - [Docker Installation Tips](#docker-installation-tips)
+    ```diff
+    + Installing on Windows 10 (Pro or Enterprise)
+    + Installing on Windows 7, 8, or 10 Home Edition
+    + Installing on Mac
+    + Installing on Linux
+    + Play With Docker (PWD) Online
+    ```
 - [Theory](#theory)
+    ```diff
+    - Important Points To Remember
+    - Difference between Containers and Virtual Machines (VMs)
+    - To see what's going on in containers
+    - Docker netwroks concepts for Private and Public communications
+    - Docker netwroks CLI management of Virtual Networks
+    - Docker networks: Default Security
+    - What are Images
+    - Image Layers
+    - Docker Image tagging and pushing to Docker Hub
+    - Dockerfile
+    - Inside Dockerfile
+    - To build Image from Dockerfile
+    ```
 - [Cleaning Up Docker](#cleaning-up-docker)
+    ```diff
+    + To cleanup all dangling images:
+    + To cleanup everything:
+    + To see space usage:
+    ```
+- [Container Lifetime And Persistent Data](#container-lifetime-and-persistent-data)
 - [Generic Examples](#generic-examples)
+    ```diff
+    + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
+    + To get a Shell inside Container
+    ```
 
 ----------------------------------------
 
@@ -388,6 +419,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker-machine rm
     docker-machine create
 ```
+
+----------------------------------------
+
+## Container Lifetime And Persistent Data
 
 ----------------------------------------
 
