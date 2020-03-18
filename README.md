@@ -44,6 +44,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + To see space usage:
     ```
 - [Container Lifetime And Persistent Data](#container-lifetime-and-persistent-data)
+    ```diff
+    + Data Volumes
+    + Bind Mounts
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -423,6 +427,29 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ----------------------------------------
 
 ## Container Lifetime And Persistent Data
+- Containers are **usually** meant to be `immutable` and `ephemeral`. i.e. Containers are `unchanging`, `temporary`, `disposable` etc.
+- The idea of Containers having `Immutable Infrastructure` (Only re-deploy Containers, never change), simply means that we don't change things once they're running. And if a `config` change needs to happen, or may be the `Container Version` upgrade needs to happen, then we `redeploy` a whole new Container.
+- Docker provides 2 solutions for `Persistent Data`:
+    * `Data Volumes`.
+    * `Bind Mounts`.
+
+```diff
++ Data Volumes
+```
+- `Docker Volumes` are a special option for Containers which creates a special location outside of that Container's `UFS (Union File System)` to store `unique data`.
+- This preserves it acrosss Container removals and allows us to attach it to whatever Container we want.
+- The Container just sees it like a local file path or a directory path.
+- **Volumes need manual deletion. We can't just clear them out by removing a Container.**
+- We might want to use following command to `cleanup` unused volumes and make it easier to see what we're doing there.
+    ```sh
+    docker volume prune
+    ```
+
+```diff
++ Bind Mounts
+```
+- `Bind Mounts` are simply us sharing or mounting a `host directory`, or `file`, into a Container.
+- The Container just sees it like a local file path or a directory path.
 
 ----------------------------------------
 
