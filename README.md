@@ -466,12 +466,30 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * There are only few cases when we have to create `volumes` before we run Containers.
     * When we want to use `custom drivers` and `labels` for `volumes`, we will have to create them `volumes` before we run our Containers.
 
-
 ```diff
 + Bind Mounts
 ```
 - `Bind Mounts` are simply us sharing or mounting a `host directory`, or `file`, into a Container.
+- In other words, `Bind Mounts` maps a host files or directories to a Container file or directory.
 - The Container just sees it like a local file path or a directory path.
+- In the background, it's just 2 locations pointing to the same file(s).
+- Skips `UFS (Union File System)` and `host` files overwrite existing (if any) in Container.
+- Since `Bind Mounts` are `host` specific, they need specific data to be on the hard drive of the `host` in order to work:
+    * We can only specify `Bind Mounts` at `docker container run` command.
+    * We cannot specify `Bind Mounts` in `Dockerfile`.
+- It's similar to creating `Named Volumes` with `-v` command. Only difference is - instead of `named volume name`, we specify `full path` before colon. For e.g.
+    ```sh
+    # Windows:
+    # Check '-v //c/Users/Aditya/stuff:/path/container/'
+    # '//c/Users/Aditya/stuff' is a full path
+    docker container run -v //c/Users/Aditya/stuff:/path/container/ IMAGE_NAME
+
+    # Mac/Linux:
+    # Check '-v /Users/Aditya/stuff:/path/container/'
+    # '/Users/Aditya/stuff' is a full path
+    docker container run -v /Users/Aditya/stuff:/path/container/ IMAGE_NAME
+    ```
+- **NOTE: The way Docker identifies difference between `Named Volumes` and `Bind Mounts` is because there is forward slash (In Windows, there are 2 forward slashses) when we set `-v` option value.**
 
 ----------------------------------------
 
