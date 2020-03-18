@@ -430,6 +430,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ## Container Lifetime And Persistent Data
 - Containers are **usually** meant to be `immutable` and `ephemeral`. i.e. Containers are `unchanging`, `temporary`, `disposable` etc.
+- **Best Practice:** Never update application in Containers, rather replace Containers with new version of application.
 - The idea of Containers having `Immutable Infrastructure` (Only re-deploy Containers, never change), simply means that we don't change things once they're running. And if a `config` change needs to happen, or may be the `Container Version` upgrade needs to happen, then we `redeploy` a whole new Container.
 - Docker provides 2 solutions for `Persistent Data`:
     * `Data Volumes`.
