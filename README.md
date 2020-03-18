@@ -464,7 +464,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     - When would we ever want to use 'docker volume create' command?
     ```
     * There are only few cases when we have to create `volumes` before we run Containers.
-    * When we want to use `custom drivers` and `labels` for `volumes`, we will have to create them `volumes` before run our Containers.
+    * When we want to use `custom drivers` and `labels` for `volumes`, we will have to create them `volumes` before we run our Containers.
 
 
 ```diff
