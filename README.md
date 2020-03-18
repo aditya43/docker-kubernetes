@@ -46,6 +46,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Container Lifetime And Persistent Data](#container-lifetime-and-persistent-data)
     ```diff
     + Data Volumes
+        - Named Volumes
+        - When would we ever want to use 'docker volume create' command?
     + Bind Mounts
     ```
 - [Generic Examples](#generic-examples)
@@ -444,6 +446,26 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```sh
     docker volume prune
     ```
+- A friendly way to assign new volumes to Container is using `named volumes`.
+
+    ```diff
+    - Named Volumes
+    ```
+    * It provides us an ability to specify things on the `docker run` command.
+    * `-v` allows us to specify either a `new volume` we want to create or a named volume by specifying volume name attached by colon. For e.g.
+    ```sh
+    # Check '-v mysql-db:/var/lib/mysql'
+    # 'mysql-db' is a volume name.
+    docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v mysql-db:/var/lib/mysql mysql
+    ```
+    * `Named Volumes` allows us to easily identify and attach same volumes to multiple Containers.
+
+    ```diff
+    - When would we ever want to use 'docker volume create' command?
+    ```
+    * There are only few cases when we have to create `volumes` before we run Containers.
+    * When we want to use `custom drivers` and `labels` for `volumes`, we will have to create them `volumes` before run our Containers.
+
 
 ```diff
 + Bind Mounts
