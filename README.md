@@ -489,7 +489,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # '/Users/Aditya/stuff' is a full path
     docker container run -v /Users/Aditya/stuff:/path/container/ IMAGE_NAME
     ```
-- **NOTE: The way Docker identifies difference between `Named Volumes` and `Bind Mounts` is because there is forward slash (In Windows, there are 2 forward slashses) when we set `-v` option value.**
+- **NOTE: Docker identifies difference between `Named Volumes` and `Bind Mounts` since there is forward slash (In Windows, there are 2 forward slashses) when we set `-v` option value.**
 
 ----------------------------------------
 
