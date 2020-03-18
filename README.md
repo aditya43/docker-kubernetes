@@ -491,6 +491,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker container run -v /Users/Aditya/stuff:/path/container/ IMAGE_NAME
     ```
 - **NOTE: Docker identifies difference between `Named Volumes` and `Bind Mounts` since there is forward slash (In Windows, there are 2 forward slashses) when we set `-v` option value.**
+- `Bind Mounts` are great for local development, local testing.
 
 ----------------------------------------
 
