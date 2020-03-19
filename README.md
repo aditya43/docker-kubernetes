@@ -48,7 +48,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Data Volumes
         - Named Volumes
         - When would we ever want to use 'docker volume create' command?
+        - Data Volumes: Important Docker Commands
     + Bind Mounts
+        - Bind Mounts: Important Docker Commands
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -473,6 +475,36 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * There are only few cases when we have to create `volumes` before we run Containers.
     * When we want to use `custom drivers` and `labels` for `volumes`, we will have to create them `volumes` before we run our Containers.
 
+    ```diff
+    - Data Volumes: Important Docker Commands
+    ```
+    ```sh
+    docker pull mysql
+    docker image inspect mysql
+    docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+    docker container ls
+    docker container inspect mysql
+    docker volume ls
+    docker volume inspect TAB COMPLETION
+    docker container run -d --name2 mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+    docker volume ls
+    docker container stop mysql
+    docker container stop mysql2
+    docker container ls
+    docker container ls -a
+    docker volume ls
+    docker container rm mysql mysql2
+    docker volume ls
+    docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
+    docker volume ls
+    docker volume inspect mysql-db
+    docker container rm -f mysql
+    docker container run -d --name mysql3 -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
+    docker volume ls
+    docker container inspect mysql3
+    docker volume create --help
+    ```
+
 ```diff
 + Bind Mounts
 ```
@@ -498,6 +530,16 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```
 - **NOTE: Docker identifies difference between `Named Volumes` and `Bind Mounts` since there is forward slash (In Windows, there are 2 forward slashses) when we set `-v` option value.**
 - `Bind Mounts` are great for local development, local testing.
+
+    ```diff
+    - Bind Mounts: Important Docker Commands
+    ```
+    ```sh
+    pcat Dockerfile
+    docker container run -d --name nginx -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
+    docker container run -d --name nginx2 -p 8080:80 nginx
+    docker container exec -it nginx bash
+    ```
 
 ----------------------------------------
 
