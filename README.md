@@ -559,6 +559,14 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * CLI tool `docker-compose`:
         - Used for local dev/test automation with those `YAML` files to simplify our Docker commands.
 
+```diff
++ docker-compose.yml
+```
+- It was originally called `Fig` (years a go).
+- Compose YAML format has it's own versions. For e.g. `1, 2, 2.1, 3, 3.1` etc.
+- It can be used with `docker-compose` command for local Docker automation or can now be used (`v1.13 and above`) directly with the Docker command line in `production` with `swarm`.
+- `docker-compose.yml` is the default filename, but any other filename can be used with `docker-compose -f` option, as long as it's a proper `YAML`.
+
 ----------------------------------------
 
 ## Generic Examples
