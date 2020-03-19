@@ -16,7 +16,7 @@ services:
     depends_on:
       - mysql-primary
       - mysql-secondary
-  proxysql:
+  proxysql: # Acts as a load balancer and failover solution.
     image: percona/proxysql
     environment:
       - CLUSTER_NAME=mycluster
