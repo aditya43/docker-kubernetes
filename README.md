@@ -545,6 +545,19 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ----------------------------------------
 
 ## Docker Compose - The Multi-Container Tool
+- `Docker Compose` Why's:
+    * Helps configure relationships between Containers.
+    * Allows us to save our Docker Container `run` settings in easy-to-read file.
+    * With `Docker Compose`, we can create one-liner developer environment startups.
+- There are 2 parts to Docker Compose:
+    * `YAML` formatted file that describes our solution options for:
+        - Containers
+        - Networks
+        - Volumes
+        - Environment Variables
+        - Images
+    * CLI tool `docker-compose`:
+        - Used for local dev/test automation with those `YAML` files to simplify our Docker commands.
 
 ----------------------------------------
 
