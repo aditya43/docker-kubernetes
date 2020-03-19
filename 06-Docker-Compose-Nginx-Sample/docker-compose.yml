@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  proxy:
+    image: nginx # this will use the nginx:latest version
+    ports:
+      - '80:80' # expose 80 on host and sent to 80 in container
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro # Doing a Bind Mount | 'ro' stands for 'read-only'.
+  web:
+    image: httpd  # this will use httpd:latest
