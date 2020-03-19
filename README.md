@@ -72,6 +72,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://github.com/docker-library/official-images](https://github.com/docker-library/official-images)
 - The Cloud Native Trail Map is CNCF's recommended path through the cloud native landscape. The cloud native landscape, serverless landscape, and member landscape are dynamically generated on this website:
     * [https://landscape.cncf.io](https://landscape.cncf.io)
+- The 12-Factor App. Key to Cloud Native App Design, Deployment, and Operation.
+    * [https://12factor.net](https://12factor.net)
+- 12 Fractured Apps.
+    * [https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c#.cjvkgw4b3](https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c#.cjvkgw4b3)
+- An introduction to immutable infrastructure.
+    * [https://www.oreilly.com/radar/an-introduction-to-immutable-infrastructure](https://www.oreilly.com/radar/an-introduction-to-immutable-infrastructure)
 - MacOS shell tweaking:
     * [https://www.bretfisher.com/shell](https://www.bretfisher.com/shell)
 - MacOS - Commands for getting into local Docker VM:
