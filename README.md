@@ -53,6 +53,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - Bind Mounts: Important Docker Commands
     ```
 - [Docker Compose - The Multi-Container Tool](#docker-compose---the-multi-container-tool)
+    ```diff
+    + docker-compose.yml
+    + docker-compose CLI
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -566,6 +570,22 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Compose YAML format has it's own versions. For e.g. `1, 2, 2.1, 3, 3.1` etc.
 - It can be used with `docker-compose` command for local Docker automation or can now be used (`v1.13 and above`) directly with the Docker command line in `production` with `swarm`.
 - `docker-compose.yml` is the default filename, but any other filename can be used with `docker-compose -f` option, as long as it's a proper `YAML`.
+
+```diff
++ docker-compose CLI
+```
+- `docker-compose` CLI tool comes with Docker for `windows` and `mac` as well as Toolbox, but there's a separate download of `docker-compose` CLI for `linux`.
+- `docker-compose` CLI is not a `production-grade` tool but ideal for local development and test.
+- Two common commands that we use are:
+    ```sh
+    docker-compose up       # Setup Volumes, Networks and start all Containers.
+    docker-compose down     # Stop all Containers and remove Containers, Volumes and Networks
+    ```
+- If all our projects had `Dockerfile` and `docker-compose.yml` then a `new developer onboarding` would be running just following 2 commands:
+    ```sh
+    git clone github.com/some/project
+    docker-compose up
+    ```
 
 ----------------------------------------
 
