@@ -56,6 +56,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + docker-compose.yml
     + docker-compose CLI
+    + docker-compose to build Images at runtime
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -586,6 +587,16 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     git clone github.com/some/project
     docker-compose up
     ```
+
+```diff
++ docker-compose to build Images at runtime
+```
+- Another thing `docker-compose` can do is build our Images at runtime.
+- `docker-compose` can also build our custom Images.
+- It will look in the `cache` for Images, and if it has build options in it, it will build the Image when we use the `docker-compose up` command.
+- It won't build the Image every single time. It will only build it only if it doesn't find it. We will have to use `docker-compose build` to rebuild Images if we change 'em or we can use `docker-compose --build`.
+- This is great for complex builds that have lots of `vars` or `build args`.
+- **`Build Arguments` are `Environment Variables` which are available only while building up Images.**
 
 ----------------------------------------
 
