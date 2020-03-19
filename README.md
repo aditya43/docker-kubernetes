@@ -52,6 +52,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Bind Mounts
         - Bind Mounts: Important Docker Commands
     ```
+- [Docker Compose - The Multi-Container Tool](#docker-compose---the-multi---container-tool)
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -540,6 +541,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker container run -d --name nginx2 -p 8080:80 nginx
     docker container exec -it nginx bash
     ```
+
+----------------------------------------
+
+## Docker Compose - The Multi-Container Tool
 
 ----------------------------------------
 
