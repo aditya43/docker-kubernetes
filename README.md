@@ -379,6 +379,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * Used to execute shell commands inside Container. It is used when we need to install software with a package repository, on we need to do some `unzipping` or some file edits inside the Container itself.
     * `Run` commands can also run `shell scripts`, or any commands that we can access from inside the Container.
     * `Dockerfile` can have multiple `Run` command blocks.
+    * **All commands are run as `root`.** This is a common problem in Docker. If we are downloading any files using `run` command and if those files require different permissions then we will have to run another command to change it's permissions. For e.g:
+    ```sh
+    # -R means recursively.
+    # Syntax: chown -R USER:GROUP DIRECTORY
+    chown -R www-data:www-data bootstrap
+    ```
 - `Expose`:
     * **Optional** block.
     * By default no `TCP` or `UDP` ports are open inside a Container.
