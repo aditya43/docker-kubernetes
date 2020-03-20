@@ -85,6 +85,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://12factor.net](https://12factor.net)
 - 12 Fractured Apps.
     * [https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c#.cjvkgw4b3](https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c#.cjvkgw4b3)
+- `YAML` quick reference:
+    * [https://yaml.org/refcard.html](https://yaml.org/refcard.html)
+    * Sample `yaml` file. Generic: [https://yaml.org/start.html](https://yaml.org/start.html)
+- `docker-compose` tool download for `linux`:
+    * [https://github.com/docker/compose/releases](https://github.com/docker/compose/releases)
+- Only one host for production environment. What to use: docker-compose or single node swarm?
+    * [https://github.com/BretFisher/ama/issues/8](https://github.com/BretFisher/ama/issues/8)
 - An introduction to immutable infrastructure.
     * [https://www.oreilly.com/radar/an-introduction-to-immutable-infrastructure](https://www.oreilly.com/radar/an-introduction-to-immutable-infrastructure)
 - MacOS shell tweaking:
