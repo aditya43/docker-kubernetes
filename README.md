@@ -61,6 +61,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
+    + To clean up apt-get cache
     + To get a Shell inside Container
     ```
 
@@ -650,6 +651,22 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```sh
     # To remove images, specify their ids like below:
     docker image rm b520f4389 5eaa22b09c6 c782432b7c66
+    ```
+
+```diff
++ To clean up apt-get cache
+```
+- By cleaning up `apt-get` cache in Containers, we get to keep our Image size small.
+- It's a best practice to clear up `apt-get` cache once the required packages are installed.
+- Following command cleans up `apt-get` cache and it is used across many popular Images same way:
+    ```sh
+    rm -rf /var/lib/apt/lists/*
+    ```
+- **FOR EXAMPLE:** After installing `git` in Image, we should clean up `cache` to save almost `10mb` space:
+    ```sh
+    # Below command installs 'git' and clears cache after installation.
+    RUN apt-get update && apt-get install -y git \
+    && rm -rf /var/lib/apt/lists/*
     ```
 
 ```diff
