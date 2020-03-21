@@ -71,6 +71,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
     + To clean up apt-get cache
     + To get a Shell inside Container
+    + Docker Swarm - Create Our First Service and Scale it Locally
     ```
 
 ----------------------------------------
@@ -926,6 +927,35 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - For e.g. To get a `bash` shell inside already running `nginx` Container named as `proxy`:
     ```sh
     docker container exec -it proxy bash
+    ```
+
+```diff
++ Docker Swarm - Create Our First Service and Scale it Locally
+```
+- To create a Docker Swarm service and scale it locally, following are the useful commands:
+    ```sh
+    docker info
+    docker swarm init
+    docker node ls
+    docker node --help
+    docker swarm --help
+    docker service --help
+    docker service create alpine ping 8.8.8.8
+    docker service ls
+    docker service ps frosty_newton
+    docker container ls
+    docker service update TAB COMPLETION --replicas 3
+    docker service ls
+    docker service ps frosty_newton
+    docker update --help
+    docker service update --help
+    docker container ls
+    docker container rm -f frosty_newton.1.TAB COMPLETION
+    docker service ls
+    docker service ps frosty_newton
+    docker service rm frosty_newton
+    docker service ls
+    docker container ls
     ```
 
 ----------------------------------------
