@@ -21,6 +21,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Installing on Mac
     + Installing on Linux
     + Play With Docker (PWD) Online
+    + Install using get.docker.com
     ```
 - [Theory](#theory)
     ```diff
@@ -185,6 +186,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - The best free online option is to use [play-with-docker.com](http://play-with-docker.com/), which will run one or more Docker instances inside our browser, and give us a terminal to use it with.
 - We can actually create multiple machines on it, and even use the URL to share the session with others in a sort of collaborative experience.
 - **It's only limitation really is it's time bombed to 4 hours, at which time it'll delete our servers.**
+
+```diff
++ Install using get.docker.com
+```
+- Go to [https://get.docker.com](https://get.docker.com) and read the instructions.
 
 ----------------------------------------
 
