@@ -739,6 +739,20 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```diff
 + What happen behind the scenes when we run docker swarm init?
 ```
+- It does lot of `PKI` and security automation:
+    * `Root Signing Certificate` created for our `Swarm` that it will use to establish `trust` and `sign` certificates for all `nodes` and all `managers`.
+    * Special `Certificate` is issued for first `Manager Node` because it's a `manager` vs. a `worker`.
+    * `Join Tokens` are created which we can actually use on other `nodes` to join this `Swarm`.
+- `Raft Consensus Database` created to store `root CA`, `configs` and `secrets`.
+    * Encrypted by default on disk (1.13+).
+    * No need for another `key/value` system to hold `orchestration/secrets`.
+    * Replicates logs amoungst `Managers` via mutual TLS in `control plane`.
+- `Raft` is a protocol that actually ensures consistency across multiple nodes and it's ideal for using in the Cloud where we can't guarentee that any one thing will be available for any moment in time.
+- It creates `Raft` database on disk. Docker stores the configuration of the `Swarm` and that `first Manager`, and it actually encrypts it.
+- Then it will waut for any other nodes before it starts actually replicating the database over to them.
+- All of this traffic that it would be doing once we create other nodes, it all going to be encrypted.
+- We don't need an additional key value storage system or some database architecture to be the backend configuration management of our `Swarm`.
+
 ----------------------------------------
 
 ## Generic Examples
