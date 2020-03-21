@@ -595,6 +595,14 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```sh
     docker-compose up       # Setup Volumes, Networks and start all Containers.
     docker-compose down     # Stop all Containers and remove Containers, Volumes and Networks
+    pcat docker-compose.yml
+    docker-compose up
+    docker-compose up -d
+    docker-compose logs
+    docker-compose --help
+    docker-compose ps
+    docker-compose top
+    docker-compose down
     ```
 - If all our projects had `Dockerfile` and `docker-compose.yml` then a `new developer onboarding` would be running just following 2 commands:
     ```sh
@@ -611,6 +619,21 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - It won't build the Image every single time. It will only build it only if it doesn't find it. We will have to use `docker-compose build` to rebuild Images if we change 'em or we can use `docker-compose up --build`.
 - This is great for complex builds that have lots of `vars` or `build args`.
 - **`Build Arguments` are `Environment Variables` that are available only during Image builds.**
+- Important commands:
+    ```sh
+    docker-compose.yml
+    docker-compose up
+    docker-compose up --build
+    docker-compose down
+    docker image ls
+    docker-compose down --help
+    docker image rm nginx-custom
+    docker image ls
+    docker-compose up -d
+    docker image ls
+    docker-compose down --help
+    docker-compose down --rmi local
+    ```
 
 ----------------------------------------
 
