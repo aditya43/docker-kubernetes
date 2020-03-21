@@ -72,6 +72,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + To clean up apt-get cache
     + To get a Shell inside Container
     + Docker Swarm - Create Our First Service and Scale it Locally
+    + Creating a 3-Node Swarm Cluster
+    + Scaling Out with Overlay Networking
     ```
 
 ----------------------------------------
@@ -956,6 +958,51 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker service rm frosty_newton
     docker service ls
     docker container ls
+    ```
+
+```diff
++ Creating a 3-Node Swarm Cluster
+```
+- To create a 3-Node Swarm Cluster, following are the useful commands:
+    ```sh
+    # http://play-with-docker.com
+    docker info
+    docker-machine
+    docker-machine create node1
+    docker-machine ssh node1
+    docker-machine env node1
+    docker info
+    # http://get.docker.com
+    docker swarm init
+    docker swarm init --advertise-addr TAB COMPLETION
+    docker node ls
+    docker node update --role manager node2
+    docker node ls
+    docker swarm join-token manager
+    docker node ls
+    docker service create --replicas 3 alpine ping 8.8.8.8
+    docker service ls
+    docker node ps
+    docker node ps node2
+    docker service ps sleepy_brown
+    ```
+
+```diff
++ Scaling Out with Overlay Networking
+```
+- Following set of commands orchestrate scaling out with overlay networking:
+    ```sh
+    docker network create --driver overlay mydrupal
+    docker network ls
+    docker service create --name psql --netowrk mydrupal -e POSTGRES_PASSWORD=mypass postgres
+    docker service ls
+    docker service ps psql
+    docker container logs psql TAB COMPLETION
+    docker service create --name drupal --network mydrupal -p 80:80 drupal
+    docker service ls
+    watch docker service ls
+    docker service ps drupal
+    docker service inspect drupal
     ```
 
 ----------------------------------------
