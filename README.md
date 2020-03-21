@@ -58,6 +58,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + docker-compose CLI
     + docker-compose to build Images at runtime
     ```
+- [Swarm Mode - Built-In Orchestration](#swarm-mode---built-in-orchestration)
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -633,6 +634,33 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker image ls
     docker-compose down --help
     docker-compose down --rmi local
+    ```
+
+----------------------------------------
+
+## Swarm Mode - Built-In Orchestration
+- `Swarm Mode` is a `clustering` solution built inside Docker.
+- **Swarm Mode** is not enabled by default in Docker.
+- Its a new feature launched in 2016 (Added in `v1.12` via `SwarmKit Toolkit`) that brings together years of understanding the needs of Containers and how to actually run them live in production.
+- At it's core, `Swarm` is actually a `server clustering` solution that brings together different operating systems or hosts or nodes, into a single manageable unit that we can then orchestrate the lifecycle of our Containers in.
+- This is not related to `Swarm Classic` for `pre-1.12` versions.
+- `Swarm Mode` answers following questions:
+    * How do we automate Container lifecyle?
+    * How can we easily scale out/in/up/down?
+    * How can we ensure our Containers are re-created when they fail?
+    * How can we replace Containers without downtime (`blue/green` deployment)?
+    * How can we control where Containers get started?
+    * How can we track where Containers get started?
+    * How can we create `cross-node` virtual networks?
+    * How can we ensure only trusted servers run our Containers?
+    * How can we store `secrets`, `keys`, `passwords` and get them to the right Container (and only that Container)?
+- Once we enable `Swarm Mode`, following are the set of new commands we can use:
+    ```sh
+    docker swarm
+    docker node
+    docker service
+    docker stack
+    docker secret
     ```
 
 ----------------------------------------
