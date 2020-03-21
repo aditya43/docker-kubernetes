@@ -112,6 +112,20 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://www.youtube.com/watch?v=sK5i-N34im8&feature=youtu.be&list=PLBmVKD7o3L8v7Kl_XXh3KaJl9Qw2lyuFl](https://www.youtube.com/watch?v=sK5i-N34im8&feature=youtu.be&list=PLBmVKD7o3L8v7Kl_XXh3KaJl9Qw2lyuFl)
 - Windows Containers and Docker: 101:
     * [https://www.youtube.com/watch?v=066-9yw8-7c](https://www.youtube.com/watch?v=066-9yw8-7c)
+- Heart of the SwarmKit Topology Management (Youtube & slides):
+    * YouTube: [https://www.youtube.com/watch?v=EmePhjGnCXY](https://www.youtube.com/watch?v=EmePhjGnCXY)
+    * Slides: [https://speakerdeck.com/aluzzardi/heart-of-the-swarmkit-topology-management](https://speakerdeck.com/aluzzardi/heart-of-the-swarmkit-topology-management)
+- Swarm Mode Deep Dive:
+    * Part1: [https://www.youtube.com/watch?v=dooPhkXT9yI](https://www.youtube.com/watch?v=dooPhkXT9yI)
+    * Part2: [https://www.youtube.com/watch?v=_F6PSP-qhdA](https://www.youtube.com/watch?v=_F6PSP-qhdA)
+- Raft Consensus Visualization (Our Swarm DB and how it stays in sync across nodes):
+    * [http://thesecretlivesofdata.com/raft/](http://thesecretlivesofdata.com/raft/)
+- Docker Swarm Firewall Ports:
+    * [https://www.bretfisher.com/docker-swarm-firewall-ports](https://www.bretfisher.com/docker-swarm-firewall-ports)
+- How To Configure Custom Connection Options for your SSH Client:
+    * [https://www.digitalocean.com/community/tutorials/how-to-configure-custom-connection-options-for-your-ssh-client](https://www.digitalocean.com/community/tutorials/how-to-configure-custom-connection-options-for-your-ssh-client)
+- Create and Upload a SSH Key to Digital Ocean:
+    * [https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys)
 
 ----------------------------------------
 
