@@ -58,11 +58,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + docker-compose CLI
     + docker-compose to build Images at runtime
     ```
-- [Swarm Mode - Built-In Orchestration](#swarm-mode---built-in-orchestration)
+- [Docker Swarm - Built-In Orchestration](#docker-swarm---built-in-orchestration)
     ```diff
     + How to check if swarm mode is activated and how to activate it
     + What happens behind the scene when we run docker swarm init?
     + Key Concepts
+    + Creating a 3-node Swarm Cluster
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -643,7 +644,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ----------------------------------------
 
-## Swarm Mode - Built-In Orchestration
+## Docker Swarm - Built-In Orchestration
 - `Swarm Mode` is a `clustering` solution built inside Docker.
 - **Swarm Mode** is not enabled by default in Docker.
 - Its a new feature launched in 2016 (Added in `v1.12` via `SwarmKit Toolkit`) that brings together years of understanding the needs of Containers and how to actually run them live in production.
@@ -760,6 +761,25 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - A `Service` in a `Swarm` replaces the `docker run`.
 - There can only be one `Leader` at a time amoungst all `managers`.
 - To remove all Containers, we have to remove `Swarm Service`.
+
+```diff
++ Creating a 3-node Swarm Cluster
+```
+- Following example demonstrates where we use multiple `hosts/nodes/instances` or `multiple OS's`. And we're going to setup a `3-node Swarm` across all 3 of those nodes.
+- How we can try out and implement this setup first:
+    * [http://play-with-docker.com](http://play-with-docker.com)
+        - Only needs a browser but resets after `4 hours`.
+    * `docker-machine + VirtualBox`.
+        - Free and runs locally, but requires a machine with `8gb` memory.
+        - Comes default with `Docker for Win and Mac`.
+        - For `Linux`, we will have to download explicitely and setup first.
+    * `Digital Ocean + Docker Install`.
+        - Most like a `production` setup, but costs `$5 to $10` per node per month.
+        - They run everything on `SSD` so it's nice and fast.
+    * `Roll our own`.
+        - `docker-machine` can provision machines for `Amazon Instances`, `Azure Instances`, `Digital Ocean Droplets`, `Google Compute Nodes` etc.
+        - Install docker anywhere with `get.docker.com`.
+        - It is a tool to simply automate dev and test environments. It was never really designed to set up all of the production settings we might need for `multi-node Swarm`.
 
 ----------------------------------------
 
