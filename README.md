@@ -786,6 +786,43 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - `docker-machine` can provision machines for `Amazon Instances`, `Azure Instances`, `Digital Ocean Droplets`, `Google Compute Nodes` etc.
         - Install docker anywhere with `get.docker.com`.
         - It is a tool to simply automate dev and test environments. It was never really designed to set up all of the production settings we might need for `multi-node Swarm`.
+- To experiment setting up `3-node Swarm Cluster` on [http://play-with-docker.com](http://play-with-docker.com):
+    * Go to [http://play-with-docker.com](http://play-with-docker.com).
+    * Launch 3 instances.
+    * On any 1 instance, execute:
+        ```sh
+        # First execute below command, it will give error and display public ips available on eth0 and eth1.
+        docker swarm init
+
+        # Copy eth0 ip and specify it as a --advertise-addr
+        docker swarm init --advertise-addr 192.168.0.6
+        ```
+    * Copy the `docker swarm join` command from there.
+    * Go to other 2 nodes and paste `docker swarm join` command.
+    * Go to 1st node and execute following command to list out nodes:
+        ```sh
+        docker node ls
+        ```
+    * To promore `node2` to `manager`, execute following command on `node1` (Leader):
+        ```sh
+        docker node update --role manager node2
+        ```
+    * To make `node3` join as `manager` by default, go to `node1` and execute following command to get `join token`:
+        ```sh
+        docker swarm join-token manager
+        ```
+    * Copy join command and execute it on `node3`.
+    * On `node1`, execute `docker node ls to see status of swarm nodes.
+    * Now to run Docker `service` with `3 replicas` on `alpine` and ping 1 of the Google open DNS (8.8.8.8), execute following command on `node1`:
+        ```sh
+        docker service create --replicas 3 alpine ping 8.8.8.8
+        ```
+    * Execute:
+        ```sh
+        docker service ps SERVICE_NAME
+        # For e.g.
+        docker service ps busy_hertz
+        ```
 
 ----------------------------------------
 
