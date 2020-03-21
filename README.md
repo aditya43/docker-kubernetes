@@ -62,6 +62,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + How to check if swarm mode is activated and how to activate it
     + What happens behind the scene when we run docker swarm init?
+    + Key Concepts
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -752,6 +753,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Then it will waut for any other nodes before it starts actually replicating the database over to them.
 - All of this traffic that it would be doing once we create other nodes, it all going to be encrypted.
 - We don't need an additional key value storage system or some database architecture to be the backend configuration management of our `Swarm`.
+
+```diff
++ Key Concepts
+```
+- A `Service` in a `Swarm` replaces the `docker run`.
+- There can only be one `Leader` at a time amoungst all `managers`.
+- To remove all Containers, we have to remove `Swarm Service`.
 
 ----------------------------------------
 
