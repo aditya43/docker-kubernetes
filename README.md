@@ -72,6 +72,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Example: Drupal with Postgres as Services
     ```
 - [Swarm - Routing Mesh](#swarm---routing-mesh)
+    ```diff
+    + Docker service logs to see logs from different nodes
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -932,6 +935,21 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `Nginx Proxy` which is also known as `HAProxy Load Balancer Proxy`. This load balancer will act in `OSI Layer 4 (DNS)`.
     * `Docker Enterprise Edition` comes with built-in `OSI Layer 4 (DNS) Web Proxy`. It is called `UCP or Docker Data Center`.
 - `Web Sockets` don't do well with `Routing Mesh`. That is because `socket` needs persistent connection to a specific Container and because of load balancing `Routing Mesh` keeps switching between Containers. We could have `proxy` infront of it to make it work with `Web Sockets`.
+
+```diff
++ Docker service logs to see logs from different nodes
+```
+- To see logs from different `docker services`, execute:
+    ```sh
+    docker service logs NODE_NAME
+    #For e.g.
+    docker service logs adipostgre
+    ```
+- If `logging` is not available, turn it on by enabling `experimental features` of docker.
+    ```javascript
+    // Open /etc/docker/daemon.json and specify following:
+    {"experimental": true}
+    ```
 
 ----------------------------------------
 
