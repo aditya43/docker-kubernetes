@@ -1,0 +1,18 @@
+version: "3.1" # To use 'secrets' in stacks, we must be at least 3.1
+
+services:
+  psql:
+    image: postgres
+    secrets:
+      - DB_USER
+      - DB_PASSWORD
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/DB_PASSWORD
+      POSTGRES_USER_FILE: /run/secrets/DB_USER
+
+secrets:
+  DB_USER:
+    file: ./DB_USER.txt
+  DB_PASSWORD:
+    file: ./DB_PASSWORD.txt
+
