@@ -75,6 +75,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + Docker service logs to see logs from different nodes
     ```
+- [Swarm - Stacks](#swarm---stacks)
+    ```diff
+    + How to deploy Swarm stack using compose file?
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -973,6 +977,17 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - `docker-compose` now ignores `deploy:` key in Config File.
 - `Swarm` ignores `build:` key in Config File.
 - `docker-compose` cli not needed on `Swarm Server`. It's not a `production` tool. It was designed to be a developer and sysadmin helper tool. It's best for local work.
+
+```diff
++ How to deploy Swarm stack using compose file?
+```
+- To deploy a `Swarm` stack using Compose File:
+    ```sh
+    # '-c' option is for Compose File.
+    docker stack deploy -c COMPOSE_FILE APP_NAME
+    # For e.g.
+    docker stack deploy -c adi-swarm-stack.yml myapp
+    ```
 
 ----------------------------------------
 
