@@ -953,6 +953,29 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ----------------------------------------
 
+## Swarm - Stacks
+- `Stacks` is another layer of abstraction added to `Swarm`.
+- `Swarm` is basically a `Docker Engine` and it can accept `Compose File` using `stack` command.
+- `Swarm` reads the `Compose File` without needing `Docker Compose` anywhere on the server.
+- Basically it's a `Compose File` for `Swarm` in production.
+- `Stacks` accept `Compose File` as their declarative definition for `services`, `networks` and `volumes`.
+- We use following command to deploy our `Stack`:
+    ```sh
+    docker stack deploy
+    ```
+- `Stacks` manages all those objects for us, including `overlay` network per `Stack`. Also adds `Stack Name` to start of their name.
+- The key `deploy:` is what we use in our `Compose File`. It allows to specify things that are specific to `Swarm`. For e.g.
+    * How many `replicas` do we want?
+    * What we want to do when we `failover`?
+    * How do we want to do `rolling updates`?
+    * And all those sort of things that we wouldn't care about on our local development machine.
+- `Stacks Config File` doesn't allow `Building`. And `Building` should never ever happen on `production`.
+- `docker-compose` now ignores `deploy:` key in Config File.
+- `Swarm` ignores `build:` key in Config File.
+- `docker-compose` cli not needed on `Swarm Server`. It's not a `production` tool. It was designed to be a developer and sysadmin helper tool. It's best for local work.
+
+----------------------------------------
+
 ## Generic Examples
 ```diff
 + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
