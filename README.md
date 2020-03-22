@@ -69,6 +69,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Swarm - Scaling Out With Virtual Networking](#swarm---scaling-out-with-virtual-networking)
     ```diff
     + Overlay Network Driver
+    + Example: Drupal with Postgres as Services
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -862,6 +863,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```
 - It's like creating a `Swarm` wide `bridge` netowrk where the Containers across `hosts` on the same `virtual network` can access each other kind of like they're on a `VLAN`.
 - This driver is only for `intra-Swarm communication`. i.e. For `container-to-container` traffic inside a single `Swarm`.
+- It acts as everything is like on the same `subnet`.
 - The `overlay` driver doesn't play a huge amount in traffic coming inside, as it's trying to take a wholistic `Swarm` view of the network so that we're not constantly messing around with networking settings on individual nodes.
 - We can also optionally enable full network encryption using `IPSec (AES)` encryption on network creation.
     * It will setup `IPSec tunnels` between all the different nodes of our `Swarm`.
@@ -869,6 +871,42 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Each `services` can be connected to multiple `networks`. For e.g. (front-end, back-end).
 - When we create our `services`, we can add them to none of the `overlay` networks, or one or more `overlay` networks.
 - Lot of traditional apps would have their back-end on the back-end network and front-end on the front-end network. THen maybe they would have an API between the two that would be on both networks. And we can totally do this in `Swarm`.
+
+```diff
++ Example: Drupal with Postgres as Services
+```
+- Create an `overlay` network first:
+    ```sh
+    docker network create --driver overlay NETWORK_NAME
+    # For e.g.
+    docker network create --driver overlay mydrupal
+    ```
+- Create a `Postgres` service on `mydrupal` network:
+    ```sh
+    docker service create --name psql --network mydrupal -e POSTGRES_PASSWORD=adi123 postgres
+    ```
+    * After running above command, we don't see image downloading and all that. That is because `Services` can't be run in the foreground.
+    * `Services` have to go through `orchestrator` and `scheduler`. Execute following command to see and list out `services`:
+    ```sh
+    docker service ls
+    ```
+- To see details:
+    ```sh
+    # To see the specific `service` details such as on which `node` it is running.
+    docker service ps psql
+    # To see the logs from Container:
+    docker container logs psql.1.gfdsnjkfdjk3kbr3289d # Tab completion is available
+    ```
+- Create a `Drupal` service on same `mydrupal` network:
+    ```sh
+    docker service create --name drupal --network mydrupal -p 80:80 drupal
+    ```
+- To see details:
+    ```sh
+    # To see the specific `service` details such as on which `node` it is running.
+    docker service ps drupal
+    ```
+- Now we have database running on `node1` and website running on `node2`. They can talk to each other using `Service Name`.
 
 ----------------------------------------
 
