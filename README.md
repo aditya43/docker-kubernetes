@@ -83,6 +83,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + What is a Secret?
     + How to create a Secret in Swarm?
+    + How to decrypt a Secret in Swarm?
     ```
 - [Generic Examples](#generic-examples)
     ```diff
