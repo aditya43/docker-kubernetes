@@ -97,6 +97,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Scaling Out with Routing Mesh
     + Create a Multi-Service Multi-Node Web App
     + Swarm Stacks and Production Grade Compose
+    + Using Secrets in Swarm Services
+    + Using Secrets with Swarm Stacks
+    + Create A Stack with Secrets and Deploy
     ```
 
 ----------------------------------------
@@ -1311,5 +1314,31 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker network ls
     docker stack deploy -c example-voting-app-stack.yml voteapp
     ```
+
+```diff
++ Using Secrets in Swarm Services
+```
+- Useful commands:
+    ```sh
+    docker secret create psql_usr psql_usr.txt
+    echo "myDBpassWORD" | docker secret create psql_pass - TAB COMPLETION
+    docker secret ls
+    docker secret inspect psql_usr
+    docker secret create --name psql --secret psql_user --secret psql_pass -e POSTGRES_PASSWORD_FILE=/run/secrets/psql_pass -e POSTGRES_USER_FILE=/run/secrets/psql_user postgres
+    docker service ps psql
+    docker exec -it psql.1.CONTAINER NAME bash
+    docker logs TAB COMPLETION
+    docker service ps psql
+    docker service update --secret-rm
+    ```
+
+```diff
++ Using Secrets with Swarm Stacks
+```
+
+
+```diff
++ Create A Stack with Secrets and Deploy
+```
 
 ----------------------------------------
