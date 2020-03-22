@@ -1013,6 +1013,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # OR
     /run/secrets/<secret_alias>
     ```
+- Local `docker-compose` can use `file-based` secrets, but they are not secure.
 
 ```diff
 + What is a Secret?
