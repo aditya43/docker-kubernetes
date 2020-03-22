@@ -66,6 +66,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Key Concepts
     + Creating a 3-node Swarm Cluster
     ```
+- [Swarm - Scaling Out With Virtual Networking](#swarm---scaling-out-with-virtual-networking)
+    ```diff
+    + Overlay Network Driver
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -840,6 +844,31 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         # For e.g.
         docker service ps busy_hertz
         ```
+
+----------------------------------------
+
+## Swarm - Scaling Out With Virtual Networking
+- With `Swarm` mode enabled, we get access to new networking driver called `overlay`.
+- To create a `network` using `overlay` driver:
+    ```sh
+    # When we don't specify anything, default driver used is 'bridge'.
+    docker network create --driver overlay
+    # Or
+    docker network create --driver overlay
+    ```
+
+```diff
++ Overlay Network Driver
+```
+- It's like creating a `Swarm` wide `bridge` netowrk where the Containers across `hosts` on the same `virtual network` can access each other kind of like they're on a `VLAN`.
+- This driver is only for `intra-Swarm communication`. i.e. For `container-to-container` traffic inside a single `Swarm`.
+- The `overlay` driver doesn't play a huge amount in traffic coming inside, as it's trying to take a wholistic `Swarm` view of the network so that we're not constantly messing around with networking settings on individual nodes.
+- We can also optionally enable full network encryption using `IPSec (AES)` encryption on network creation.
+    * It will setup `IPSec tunnels` between all the different nodes of our `Swarm`.
+    * `IPSec (AES) Encryption` is off by default for performance reasons.
+- Each `services` can be connected to multiple `networks`. For e.g. (front-end, back-end).
+- When we create our `services`, we can add them to none of the `overlay` networks, or one or more `overlay` networks.
+- Lot of traditional apps would have their back-end on the back-end network and front-end on the front-end network. THen maybe they would have an API between the two that would be on both networks. And we can totally do this in `Swarm`.
 
 ----------------------------------------
 
