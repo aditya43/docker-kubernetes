@@ -82,8 +82,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Swarm - Secret Storage](#swarm---secret-storage)
     ```diff
     + What is a Secret?
-    + How to create a Secret in Swarm?
-    + How to decrypt a Secret in Swarm?
+    + How to create a Secret?
+    + How to decrypt a Secret?
+    + How to remove a Secret?
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1026,7 +1027,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Any data we would prefer not to be `on the front page of the news`.
 
 ```diff
-+ How to create a Secret in Swarm?
++ How to create a Secret?
 ```
 - There are 2 ways we can create a `secret` in `Swarm`:
     * Create a text file and store value in it.
@@ -1050,7 +1051,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - Running above command will spit out a key in return.
 
 ```diff
-+ How to decrypt a Secret in Swarm?
++ How to decrypt a Secret?
 ```
 - Only `Containers` and `Services` have access to the decrypted `secrets`.
 - For e.g.
@@ -1071,6 +1072,25 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
     # 'cat' contents of any secret file and it will display decrypted value.
     cat DB_USER
+    ```
+
+```diff
++ How to remove a Secret?
+```
+- Only `Containers` and `Services` have access to the decrypted `secrets`.
+- When we remove/add a `secret`, it will stop the Container and redeploy a new one. This is not ideal for database `services` in `Swarm`.
+- To remove a `secret` from `Swarm`:
+    ```sh
+    # SSH/Get a shell inside Container.
+
+    # List containers of 'adidb' service and copy the container name.
+    docker service ps adidb
+
+    # Get a shell inside Container.
+    docker exec -it adidb.1.fbhdbj3738dh2 bash # 'adidb.1.fbhdbj3738dh2' is CONTAINER_NAME
+
+    # To remove
+    docker service update --secret-rm
     ```
 
 ----------------------------------------
