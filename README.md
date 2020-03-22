@@ -79,6 +79,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + How to deploy Swarm stack using compose file?
     ```
+- [Swarm - Secret Storage](#swarm---secret-storage)
+    ```diff
+    + What is a Secret?
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -988,6 +992,23 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # For e.g.
     docker stack deploy -c adi-swarm-stack.yml myapp
     ```
+
+----------------------------------------
+
+## Swarm - Secret Storage
+- Easiest `secure` solution for storing `secrets` in `Swarm`.
+- Encrypted on disk and encrypted in transit as well.
+- There are lots of other options like `Vault` available for storing `secrets`.
+- Supports generic strings or binary content up to `500kb` in size.
+- Doesn't require apps to be rewritten.
+
+```diff
++ What is a Secret?
+```
+- Usernames and Passwords
+- `TLS` certificates and keys.
+- SSH Keys.
+- Any data we would prefer not to be `on the front page of the news`.
 
 ----------------------------------------
 
