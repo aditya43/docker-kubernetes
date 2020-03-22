@@ -1001,6 +1001,18 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - There are lots of other options like `Vault` available for storing `secrets`.
 - Supports generic strings or binary content up to `500kb` in size.
 - Doesn't require apps to be rewritten.
+- From `Docker v1.13.0`, the `Swarm Raft Database` is encrypted on disk.
+- It's only stored on the disk of the `manager` nodes and they're the only ones that have the keys to unlock it or decrypt it.
+- Default is `Managers` and `Workers` `control plane` is `TLS + Mutual Auth`.
+- Secrets are first stored in `Swarm` (using `docker secrets` command), then assigned to a `Service(s)`.
+- Only Containers in assigned `Service(s)` can see them.
+- They look like files in Containers but are actually `in-memory` filesystem.
+- On disk, they are located at:
+    ```sh
+    /run/secrets/<secret_name>
+    # OR
+    /run/secrets/<secret_alias>
+    ```
 
 ```diff
 + What is a Secret?
