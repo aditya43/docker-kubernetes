@@ -71,6 +71,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Overlay Network Driver
     + Example: Drupal with Postgres as Services
     ```
+- [Swarm - Routing Mesh](#swarm---routing-mesh-in-overlay-networks)
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -907,6 +908,24 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker service ps drupal
     ```
 - Now we have database running on `node1` and website running on `node2`. They can talk to each other using `Service Name`.
+
+----------------------------------------
+
+## Swarm - Routing Mesh
+- `Routing Mesh` is a `Stateless Load Balancer`.
+- `Routing Mesh` load balancer acts at `OSI Layer 3 (TCP)` and not at `Layer 4 (DNS)`.
+- `Routing Mesh` routes `ingress (incoming)` packets for a `Service` to a proper `Task.`
+- The `Routing Mesh` is an `incoming` or `ingress` network that distributes packets for our `service` to the `Tasks` for that `service`, because we can have more than one `Task`.
+- Spans all nodes in `Swarm`.
+- It uses `Kernel Primitives` called `IPVS` from `Linux Kernel`.
+- `Routing Mesh` load balances `Swarm Services` across their `Tasks`.
+- Two ways `Routing Mesh` works:
+    * `Container-to-Container` in an `Overlay Network` (uses `Virtual IP (VIP)`). `Virtual IP (VIP)` is something `Swarm` puts infront of all `Services`. It's a private IP inside the `virtual networking` of `Swarm`, and it ensures that the load is distributed amongst all the `Tasks` for a `Service`.
+    * External traffic incoming to published ports (all nodes listen).
+- The benefit of `Virtual IP (VIP)` over `DNS Round Robin` is that a lot of times `DNS Cache` inside our apps prevent us from properly distributing the load.
+- To run multiple websites on a same port, we could use:
+    * `Nginx Proxy` which is also known as `HAProxy Load Balancer Proxy`. This load balancer will act in `OSI Layer 4 (DNS)`.
+    * `Docker Enterprise Edition` comes with built-in `OSI Layer 4 (DNS) Web Proxy`. It is called `UCP or Docker Data Center`.
 
 ----------------------------------------
 
