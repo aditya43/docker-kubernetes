@@ -82,6 +82,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Swarm - Secret Storage](#swarm---secret-storage)
     ```diff
     + What is a Secret?
+    + How to create a Secret in Swarm?
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1022,6 +1023,31 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - `TLS` certificates and keys.
 - SSH Keys.
 - Any data we would prefer not to be `on the front page of the news`.
+
+```diff
++ How to create a Secret in Swarm?
+```
+- There are 2 ways we can create a `secret` in `Swarm`:
+    * Create a text file and store value in it.
+        - Assume, we have a file `db_username.txt` with text content `aditya`:
+            ```sh
+            > cat db_username.txt
+            aditya
+            ```
+        - Now, to create a `secret` from above file,
+            ```sh
+            docker secret create SECRET_NAME FILE_PATH
+            # For e.g.
+            docker secret create DB_USER db_username.txt
+            ```
+        - Running above command will spit out a key in return.
+    * Pass `secret value` at the command line.
+        - To pass a `value` at command line and create a `secret` out of it:
+            ```sh
+            echo "myPasswordAdi123" | docker secret create DB_PASSWORD
+            ```
+        - Running above command will spit out a key in return.
+
 
 ----------------------------------------
 
