@@ -572,7 +572,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker container inspect mysql3
     docker volume create --help
     ```
-- **`-v` command is not compatible with `docker services`. To use `volumes` with `docker services`, we have to use `--mount` command and specify verious required options with it.** For e.g. Creating a `volume` for `postgre service`:
+- **`-v` command is not compatible with `docker services`. To use `volumes` with `docker services`, we have to use `--mount` command and specify verious required options with it.** For e.g. Creating a `volume` for `postgres service`:
     ```sh
     docker service create --name db --network backend -e POSTGRES_HOST_AUTH_METHOD=trust --mount type=volume,source=db-data,target=/var/lib/postgresql/data postgres:9.4
     ```
@@ -952,7 +952,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```sh
     docker service logs NODE_NAME
     #For e.g.
-    docker service logs adipostgre
+    docker service logs adipostgres
     ```
 - If `logging` is not available, turn it on by enabling `experimental features` of docker.
     ```javascript
@@ -1048,6 +1048,29 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
             ```
         - Running above command will spit out a key in return.
 
+```diff
++ How to decrypt a Secret in Swarm?
+```
+- Only `Containers` and `Services` have access to the decrypted `secrets`.
+- For e.g.
+    ```sh
+    # Demo
+
+    # Create a service first.
+    docker service create --name adidb --secret DB_USER --secret DB_PASS -e POSTGRES_PASSWORD_FILE=/run/secrets/DB_PASS -e POSTGRES_USER_FILE=/run/secrets/DB_USER postgres
+
+    # List containers of 'adidb' service and copy the container name.
+    docker service ps adidb
+
+    # Get a shell inside Container.
+    docker exec -it adidb.1.fbhdbj3738dh2 bash # 'adidb.1.fbhdbj3738dh2' is CONTAINER_NAME
+
+    # Once we have the shell inside Container, list all secrets:
+    ls /run/secrets/
+
+    # 'cat' contents of any secret file and it will display decrypted value.
+    cat DB_USER
+    ```
 
 ----------------------------------------
 
