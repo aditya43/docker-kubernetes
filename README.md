@@ -1335,10 +1335,19 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```diff
 + Using Secrets with Swarm Stacks
 ```
-
+- Useful commands:
+    ```sh
+    vim docker-compose.yml
+    docker stack deploy -c docker-compose.yml mydb
+    docker secret ls
+    docker stack rm mydb
+    ```
 
 ```diff
 + Create A Stack with Secrets and Deploy
 ```
+- Useful commands:
+    ```sh
+    ```
 
 ----------------------------------------
