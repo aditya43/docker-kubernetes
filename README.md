@@ -71,7 +71,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Overlay Network Driver
     + Example: Drupal with Postgres as Services
     ```
-- [Swarm - Routing Mesh](#swarm---routing-mesh-in-overlay-networks)
+- [Swarm - Routing Mesh](#swarm---routing-mesh)
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -560,6 +560,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker container inspect mysql3
     docker volume create --help
     ```
+- **`-v` command is not compatible with `docker services`. To use `volumes` with `docker services`, we have to use `--mount` command and specify verious required options with it.** For e.g. Creating a `volume` for `postgre service`:
+    ```sh
+    docker service create --name db --network backend -e POSTGRES_HOST_AUTH_METHOD=trust --mount type=volume,source=db-data,target=/var/lib/postgresql/data postgres:9.4
+    ```
 
 ```diff
 + Bind Mounts
@@ -865,6 +869,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - It's like creating a `Swarm` wide `bridge` netowrk where the Containers across `hosts` on the same `virtual network` can access each other kind of like they're on a `VLAN`.
 - This driver is only for `intra-Swarm communication`. i.e. For `container-to-container` traffic inside a single `Swarm`.
 - It acts as everything is like on the same `subnet`.
+- `overlay` network is the only kind of network we could use in a `Swarm`. Because `overlay` allows us to span across nodes as if they are all on the `local network`.
 - The `overlay` driver doesn't play a huge amount in traffic coming inside, as it's trying to take a wholistic `Swarm` view of the network so that we're not constantly messing around with networking settings on individual nodes.
 - We can also optionally enable full network encryption using `IPSec (AES)` encryption on network creation.
     * It will setup `IPSec tunnels` between all the different nodes of our `Swarm`.
@@ -926,6 +931,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - To run multiple websites on a same port, we could use:
     * `Nginx Proxy` which is also known as `HAProxy Load Balancer Proxy`. This load balancer will act in `OSI Layer 4 (DNS)`.
     * `Docker Enterprise Edition` comes with built-in `OSI Layer 4 (DNS) Web Proxy`. It is called `UCP or Docker Data Center`.
+- `Web Sockets` don't do well with `Routing Mesh`. That is because `socket` needs persistent connection to a specific Container and because of load balancing `Routing Mesh` keeps switching between Containers. We could have `proxy` infront of it to make it work with `Web Sockets`.
 
 ----------------------------------------
 
