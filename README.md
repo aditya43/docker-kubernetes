@@ -94,6 +94,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Docker Swarm - Create Our First Service and Scale it Locally
     + Creating a 3-Node Swarm Cluster
     + Scaling Out with Overlay Networking
+    + Scaling Out with Routing Mesh
+    + Create a Multi-Service Multi-Node Web App
     ```
 
 ----------------------------------------
@@ -149,6 +151,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://www.digitalocean.com/community/tutorials/how-to-configure-custom-connection-options-for-your-ssh-client](https://www.digitalocean.com/community/tutorials/how-to-configure-custom-connection-options-for-your-ssh-client)
 - Create and Upload a SSH Key to Digital Ocean:
     * [https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys)
+- Only one host for production environment. What to use: docker-compose or single node swarm?
+    * [https://github.com/BretFisher/ama/issues/8](https://github.com/BretFisher/ama/issues/8)
 
 ----------------------------------------
 
@@ -1255,6 +1259,40 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     watch docker service ls
     docker service ps drupal
     docker service inspect drupal
+    ```
+
+```diff
++ Scaling Out with Routing Mesh
+```
+- Following set of commands orchestrate scaling out with Routing Mesh:
+    ```sh
+    docker service create --name search --replicas 3 -p 9200:9200 elasticsearch:2
+    docker service ps search
+    ```
+
+```diff
++ Create a Multi-Service Multi-Node Web App
+```
+- Following set of commands orchestrate creation of a Multi-Service Multi-Node Web App:
+    ```sh
+    docker node ls
+    docker service ls
+    docker network create -d overlay backend
+    docker network create -d overlay frontend
+    docker service create --name vote -p 80:80 --network frontend -- replica 2 COPY IMAGE
+    docker service create --name redis --network frontend --replica 1 redis:3.2
+    docker service create --name worker --network frontend --network backend COPY IMAGE
+    docker service create --name db --network backend COPY MOUNT INFO
+    docker service create --name result --network backend -p 5001:80 COPY INFO
+    docker service ls
+    docker service ps result
+    docker service ps redis
+    docker service ps db
+    docker service ps vote
+    docker service ps worker
+    cat /etc/docker/
+    docker service logs worker
+    docker service ps worker
     ```
 
 ----------------------------------------
