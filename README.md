@@ -1348,6 +1348,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```
 - Useful commands:
     ```sh
+    vim docker-compose.yml
+    docker stack deploy - c docker-compose.yml drupal
+    echo STRING |docker secret create psql-ps - VALUE
+    docker stack deploy -c docker-compose.yml drupal
+    docker stack ps drupal
     ```
 
 ----------------------------------------
