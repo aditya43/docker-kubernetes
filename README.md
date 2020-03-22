@@ -96,6 +96,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Scaling Out with Overlay Networking
     + Scaling Out with Routing Mesh
     + Create a Multi-Service Multi-Node Web App
+    + Swarm Stacks and Production Grade Compose
     ```
 
 ----------------------------------------
@@ -1293,6 +1294,22 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     cat /etc/docker/
     docker service logs worker
     docker service ps worker
+    ```
+
+```diff
++ Swarm Stacks and Production Grade Compose
+```
+- Following set of commands demonstrate Swarm Stacks and Production Grade Compose:
+    ```sh
+    docker stack deploy -c example-voting-app-stack.yml voteapp
+    docker stack
+    docker stack ls
+    docker stack ps voteapp
+    docker container ls
+    docker stack services voteapp
+    docker stack ps voteapp
+    docker network ls
+    docker stack deploy -c example-voting-app-stack.yml voteapp
     ```
 
 ----------------------------------------
