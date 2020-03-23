@@ -90,6 +90,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + Swarm Update Examples
     ```
+- [Docker Healthchecks](#docker-healthchecks)
+    ```diff
+
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1149,6 +1153,22 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ----------------------------------------
 
+## Docker Healthchecks
+- Supported in `Dockerfile`, `Compose YAML`, `docker run` and `Swarm Services`.
+- Docker engine will `exec`'s the command in the Container.
+    * For e.g. `curl localhost`.
+- Docker runs `Healthcheck` command from inside the Container, and not from outside the Container.
+- It expects `exit 0 (OK)` or `exit 1 (Error)`.
+- `Healthcheck` commands are run every `30 seconds` by default.
+- `Healthcheck` in Docker specifically has only 3 `states`. Follwing are the `states`:
+    * `starting`: first `30 seconds` by default, where it hasn't run a `healthcheck` command yet.
+    * `healthy`.
+    * `unhealthy`.
+- This is much better than `is binary still running?`.
+- This isn't a external monitoring replacement. 3rd party monitoring tools provide much better insights including graphs and all.
+
+----------------------------------------
+
 ## Generic Examples
 ```diff
 + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1410,7 +1430,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker service ls
     docker service scale web=5
     docker service update --image nginx:1.13.6 web
-    docker service update --publish-rm 8088 --publish-add 9090:80
+    docker service update --publish-rm 8088 --publish-add 9090:80 web
     docker service update --force web
     ```
 
