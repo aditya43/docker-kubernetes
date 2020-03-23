@@ -1127,9 +1127,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```diff
 + Swarm Update Examples
 ```
-- Just update the `image` to a newer version, that is already being used:
+- Just update the `image` to a newer version, that is already being used. We will have to use `service update` command:
     ```sh
     docker service update --image myapp:1.2.1 <SERVICE_NAME>
+    ```
+- Adding an `environment` variable and remove a `port`. We will have to use `service update` command:
+    ```sh
+    docker service update --env-add NODE_ENV=production --publish-rm 8080
     ```
 
 ----------------------------------------
