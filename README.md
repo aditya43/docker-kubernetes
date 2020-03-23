@@ -104,6 +104,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Registry And Proper TLS
     + Private Docker Registry In Swarm
     ```
+- [Kubernetes](#kubernetes)
+    ```diff
+    + What is Kubernetes
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1327,6 +1331,22 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         docker service create --name nginx -p 80:80 --replicas 5 --detach=false 127.0.0.1:5000/nginx
         docker service ps nginx
         ```
+
+----------------------------------------
+
+## Kubernetes
+```diff
++ What is Kubernetes
+```
+- `Kubernetes` is a popular Container orchestrator.
+- `Container Orchestration` is **Make many servers act like one**.
+- `Kubernetes` was released in 2015 by Google Inc. and now it is maintained by open source community which Google Inc. is also part of.
+- `Kubernetes` runs on top of Docker (usually) as a set of APIs in Containers.
+- `Kubernetes` provides set of `APIs` or `CLI` to manage Containers across servers/nodes.
+- Like in Docker we were using `docker` command a lot, in `Kubernetes` we use `kubectl (kube control)` command.
+- `kubectl` is also referred to as `Kube Control` tool or `Kube Cuddle` tool or `Koob Control` etc. but the standard name from official repo is now `Kube Control`.
+- Many cloud vendors provide `Kubernetes` as a service to run our Containers.
+- Many vendors make a `distribution` of `Kubernetes`. It's similar to the concept of `linux distribution`. For e.g. same `linux kernel` is running of different `distributions` of `linux`.
 
 ----------------------------------------
 
