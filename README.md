@@ -1123,6 +1123,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker service rollback web
     ```
 - If a `stack` already exists and if we do `stack deploy` to a same `stack`, it will issue `service updates`.
+- In `Swarm Updates`, we don't have a different `deploy` command. It's just same `docker stack deploy`, with the file that we have edited, and it's job is to work with all of the other parts of the `API` to determine if there are any changes needed, and then roll those out with a `service update`.
 
 ```diff
 + Swarm Update Examples
@@ -1139,6 +1140,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```sh
     # Set number of `web` replicas to 8 and number of `api` replicas to 6.
     docker service scale web=8 api=6
+    ```
+- `Swarm Update`, first edit the `YAML` file and then execute:
+    ```sh
+    docker stack deploy -c FILE_NAME.yml <STACK_NAME>
     ```
 
 ----------------------------------------
