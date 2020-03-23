@@ -87,6 +87,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + How to remove a Secret?
     ```
 - [Swarm - Service Updates Changing Things In Flight](#swarm---service-updates-changing-things-in-flight)
+    ```diff
+    + Swarm Update Examples
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1120,6 +1123,14 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker service rollback web
     ```
 - If a `stack` already exists and if we do `stack deploy` to a same `stack`, it will issue `service updates`.
+
+```diff
++ Swarm Update Examples
+```
+- Just update the `image` to a newer version, that is already being used:
+    ```sh
+    docker service update --image myapp:1.2.1 <SERVICE_NAME>
+    ```
 
 ----------------------------------------
 
