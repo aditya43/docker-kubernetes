@@ -93,6 +93,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Docker Healthchecks](#docker-healthchecks)
     ```diff
     + Where do we see Docker Healthcheck status?
+    + Healthcheck Docker Run Example
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1175,6 +1176,20 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - `docker run` command does not take action on an `unhealthy` Container. Once the `healthcheck` is considers a Container `unhealthy`, `docker run` is just going to indicate that in the `ls` and `inspect` commands.
 - `Swarm Services` will replace `tasks/containers` if they fail `healthcheck`.
 - `service update` commands wait for `healthcheck` before continuing.
+
+```diff
++ Healthcheck Docker Run Example
+```
+- Adding `healthcheck` at runtime using `docker run` command:
+    ```sh
+    docker run \
+        --health-cmd="curl -f localhost:9200/_cluster/health || false" \
+        --health-interval=5s \
+        --health-retries=3 \
+        --health-timeout=2s \
+        --health-start-period=15s \
+        elasticsearch:2
+    ```
 
 ----------------------------------------
 
