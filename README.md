@@ -1135,6 +1135,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```sh
     docker service update --env-add NODE_ENV=production --publish-rm 8080
     ```
+- Change number of `replicas` of two `services`. We will have to use `service scale` command:
+    ```sh
+    # Set number of `web` replicas to 8 and number of `api` replicas to 6.
+    docker service scale web=8 api=6
+    ```
 
 ----------------------------------------
 
