@@ -1202,7 +1202,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Custom options with `HEALTHCHECK` command in `Dockerfile`:
     ```yaml
     HEALTHCHECK --timeout=2s --interval=3s --retries=3 \
-    CMD curl -f http://localhost/ || exit 1
+    CMD curl -f http://localhost/ || exit 1     # `exit 1` is equivalent to `false`.
     ```
 - All options for `healthcheck` command in `Dockerfile`:
     ```sh
