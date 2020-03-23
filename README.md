@@ -92,7 +92,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```
 - [Docker Healthchecks](#docker-healthchecks)
     ```diff
-
+    + Where do we see Docker Healthcheck status?
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1166,6 +1166,15 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `unhealthy`.
 - This is much better than `is binary still running?`.
 - This isn't a external monitoring replacement. 3rd party monitoring tools provide much better insights including graphs and all.
+
+```diff
++ Where do we see Docker Healthcheck status?
+```
+- The `Healthcheck status` shows up in `docker container ls`.
+- We can check `last 5 healthchecks` with `docker container inspect`.
+- `docker run` command does not take action on an `unhealthy` Container. Once the `healthcheck` is considers a Container `unhealthy`, `docker run` is just going to indicate that in the `ls` and `inspect` commands.
+- `Swarm Services` will replace `tasks/containers` if they fail `healthcheck`.
+- `service update` commands wait for `healthcheck` before continuing.
 
 ----------------------------------------
 
