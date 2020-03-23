@@ -99,6 +99,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Container Registeries](#container-registeries)
     ```diff
     + Docker Hub
+    + Running Docker Registry
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1242,6 +1243,19 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - We can make use of `webhooks` to make our `repository` send `webhook notification` to services like `Jenkins`, `Codeship`, `Travis CI` or something like that, to have automated builds continue down the lines.
 - `Webhooks` are there to help us automate the process of getting our code all the way from something like `Git` or `Github` to `Docker Hub` and all the way to our servers where we want to run them.
 - `Collaborators` are where we provide permissions for other users to our `Image`.
+
+```diff
++ Running Docker Registry
+```
+- Using `Docker Registry`, we can run a `private` Image registry for our `network`.
+- It's a part of `Docker/distribution GitHub Repo`.
+- The de facto in private container registries.
+- Not as full featured as `Docker Hub` or `Others`, no web UI, basic auth only.
+- At it's core, it's just a web API and storage system, written in `Go Lang`.
+- Storage supports `local`, `S3`, `Azure`, `Alibaba`, `Google Cloud` and `OpenStack Swift`.
+- We should secure our registry with `TLS (Transport Layer Security)`.
+- Storage cleanup via `Garbage Collection`.
+- Enable `Docker Hub Caching` via `--registry-mirror` option.
 
 ----------------------------------------
 
