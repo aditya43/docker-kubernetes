@@ -1,0 +1,7 @@
+{
+    "name": "adityahajare/laravel-docker-setup",
+    "description": "Sample composer config",
+    "require": {
+        "monolog/monolog": "1.0.*"
+    }
+}
