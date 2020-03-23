@@ -108,6 +108,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + What is Kubernetes
     + Why Kubernetes
+    + Kubernetes vs. Swarm
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1364,6 +1365,33 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * First part of this decision is to figure out if we want a Cloud Managed solution or if we want to roll our own solution with a vendor's product that we would install on the servers ourselves.
     * Some of the common distributions that are vendor supported are `Docker Enterprise`, `Rancher`, `OpenShift from RedHat`, `Canonical from Ubuntu Company`, `PKS from VMware` etc. Check out this list of [Kubernetes Certified Distributors](https://kubernetes.io/partners/#conformance)
     * We probably don't usually need pure upstream version of `GitHub's Kubernetes`.
+
+```diff
++ Kubernetes vs. Swarm
+```
+- `Kubernetes` and `Swarm` both solve similar problems. THey are both Container orchestrators that run on top of a Container runtime. There are different Container runtimes like `Docker`, `Containerd`, `CRI-O`, `frakti` etc. `Docker` is #1.
+- `Kubernetes` and `Swarm` both are solid platforms with vendor backing.
+- `Swarm` is easier to `deploy/manage`.
+- `Kubernetes` has more features and flexibility. It can solve more problems in more ways and also has wide adoption and support.
+- **Advantages Of `Swarm`:**
+    * Comes with Docker, single vendor Container platform i.e Container runtime and the Orchestrator both built by the same company (Docker).
+    * Easiest orchestrator to deploy/manage ourselves.
+    * Follows 80/20 rule i.e. 20% of features for 80% of use cases.
+    * Runs anywhere where Docker can run:
+        - local, cloud, datacenter
+        - ARM, Windows, 32-bit
+    * Secure by default.
+    * Easier to troubleshoot because there are less moving parts in it and less things to manage.
+- **Advantages Of `Kubernetes`:**
+    * Clouds will deploy/manage `Kubernetes` for us. Has the widest Cloud and vendor support.
+    * Now a days, even Infrastructure vendors like `VMware`, `Red Hat`, `NetApp` etc. are making their own distributions.
+    * Widest adoption and community.
+    * Flexible: Covers widest set of use cases.
+    * `Kubernetes First` vendor support.
+    * `No one ever got fired for buying IBM`.
+        - i.e. Picking solution isn't 100% rational.
+        - Trendy, will benefit our career.
+        - CIO/CTO Checkbox.
 
 ----------------------------------------
 
