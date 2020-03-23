@@ -100,6 +100,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + Docker Hub
     + Running Docker Registry
+    + Running A Private Docker Registry
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1256,6 +1257,43 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - We should secure our registry with `TLS (Transport Layer Security)`.
 - Storage cleanup via `Garbage Collection`.
 - Enable `Docker Hub Caching` via `--registry-mirror` option.
+
+```diff
++ Running A Private Docker Registry
+```
+- Run the registry image on default port `5000`.
+- Re-tag an existing Image and push it to our new `registry`.
+- Remove that Image from our local cache and pull it from new `registry`.
+- Re-create `registry` using a `bind mount` and see how it stores data.
+- Following commands demonstrate `How to run private Docker registry`:
+    ```sh
+    docker container run -d -p 5000:5000 --name registry registry
+    docker container ls
+    docker image ls
+    docker pull hello-world
+    docker run hello-world
+    docker tag hello-world 127.0.0.1:5000/hello-world
+    docker image ls
+    docker push 127.0.0.1:5000/hello-world
+    docker image remove hello-world
+    docker image remove 127.0.0.1:5000/hello-world
+    docker container rm admiring_stallman
+    docker image remove 127.0.0.1:5000/hello-world
+    docker image ls
+    docker pull 127.0.0.1:5000/hello-world:latest
+    docker container kill registry
+    docker container rm registry
+    docker container run -d -p 5000:5000 --name registry -v $(pwd)/registry-data:/var/lib/registry registry TAB COMPLETION
+    docker image ls
+    docker push 127.0.0.1:5000/hello-world
+    ```
+
+```diff
++ Registry And Proper TLS
+```
+- `Secure by Default`: Docker won't talk to registry without `HTTPS`.
+- Except, `localhost (127.0.0.0/8)`.
+- For remote `self-signed TLS`, enable `insecure-registry` option in engine.
 
 ----------------------------------------
 
