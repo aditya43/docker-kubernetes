@@ -86,6 +86,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + How to decrypt a Secret?
     + How to remove a Secret?
     ```
+- [Swarm - Service Updates Changing Things In Flight](#swarm---service-updates-changing-things-in-flight)
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1100,6 +1101,25 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # To remove
     docker service update --secret-rm
     ```
+
+----------------------------------------
+
+## Swarm - Service Updates Changing Things In Flight
+- Swarm's update functionality is centered around a `rolling update` pattern for our `replicas`.
+- Provides `rolling replacement` of `tasks/containers` in a `service`.
+- In other words, if we have a `service` with more than one `replica`, it's going to roll through them by default, one at a time, updating each `Container` by replacing it with the new settings that we're putting in the `update command`.
+- Limits `downtime` (be careful with `prevents` downtime).
+- Will replace `Containers` for most changes.
+- There are loads of `CLI options (77+)` available to control the `update`.
+- `create` options will usually change, adding `-add` or `-rm` to them.
+- Also includes `rollback` and `healthcheck` options.
+- Also has `scale` and `rollback` subcommands for quicker access. For e.g.
+    ```sh
+    docker service scale web=4
+    # And
+    docker service rollback web
+    ```
+- If a `stack` already exists and if we do `stack deploy` to a same `stack`, it will issue `service updates`.
 
 ----------------------------------------
 
