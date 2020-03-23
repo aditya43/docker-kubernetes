@@ -107,6 +107,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Kubernetes](#kubernetes)
     ```diff
     + What is Kubernetes
+    + Why Kubernetes
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1347,6 +1348,22 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - `kubectl` is also referred to as `Kube Control` tool or `Kube Cuddle` tool or `Koob Control` etc. but the standard name from official repo is now `Kube Control`.
 - Many cloud vendors provide `Kubernetes` as a service to run our Containers.
 - Many vendors make a `distribution` of `Kubernetes`. It's similar to the concept of `linux distribution`. For e.g. same `linux kernel` is running of different `distributions` of `linux`.
+
+```diff
++ Why Kubernetes
+```
+- Not every solution needs orchestration.
+- Simple formula whether or not to use orchestration:
+    * Take the `number of servers` that we need for particular environment and then the `change rate` of our applications or the environment itself. The multiplication of those 2 is equals to the benefit of Orchestration.
+- If our application is changing only 1ce a month or less, then the Orchestration and the efforts involved in deploying it, managing it, securing it, may be unnecessary at this state. Especially if we're a solo developer or just a very small team. That's where things like `Elastic Beanstalk`, `Heroku` etc. start to shine as alternatives to doing our own Orchestration.
+- Carefully decide which Orchestration platform we need.
+- There are Cloud specific Orchestration platforms like `AWS ECS`. It is more traditional offering that have been around a little bit longer like `Cloud Foundry`, `Mesos` and `Marathon`.
+- If we're concerned about running Containers on premise, and in the Cloud or potentially multi-Cloud, then we may not want to go with those Cloud specific offerings like `ECS`. Because those were around before `Kubernetes` was. So, that was sort of a legacy solution that Amazon still supports and it's still a neat option, but only if we're specific to `AWS` and that's the only place we ever plan to deploy Containers.
+- `Swarm` and `kubernetes` are most popular Container Orchestrators that run on every Cloud, and in data centers, and even small environments possibly like `IoT`.
+- If we decide on `Kubernetes` as our Orchestrator then next big decision comes down to `which distribution we are going to use?`
+    * First part of this decision is to figure out if we want a Cloud Managed solution or if we want to roll our own solution with a vendor's product that we would install on the servers ourselves.
+    * Some of the common distributions that are vendor supported are `Docker Enterprise`, `Rancher`, `OpenShift from RedHat`, `Canonical from Ubuntu Company`, `PKS from VMware` etc. Check out this list of [Kubernetes Certified Distributors](https://kubernetes.io/partners/#conformance)
+    * We probably don't usually need pure upstream version of `GitHub's Kubernetes`.
 
 ----------------------------------------
 
