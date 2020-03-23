@@ -96,6 +96,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Healthcheck Docker Run Example
     + Healthcheck in Dockerfile
     ```
+- [Container Registeries](#container-registeries)
+    ```diff
+    + Docker Hub
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1221,6 +1225,23 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # it marks that container `unhealthy`.
     --retries=N # Default 3.
     ```
+
+----------------------------------------
+
+## Container Registeries
+- An image registry needs to be part of our `Container Plan`.
+- `Docker Store` is different than `Docker Hub`.
+- `Docker Cloud` is different than `Docker Hub`.
+
+```diff
++ Docker Hub
+```
+- It is the most popular public `Image` registry.
+- `Docker Hub` is a `Docker Registry` plus `Lightweight Image Building`.
+- It provides 1 free `private repository`. We have to pay for there on wards.
+- We can make use of `webhooks` to make our `repository` send `webhook notification` to services like `Jenkins`, `Codeship`, `Travis CI` or something like that, to have automated builds continue down the lines.
+- `Webhooks` are there to help us automate the process of getting our code all the way from something like `Git` or `Github` to `Docker Hub` and all the way to our servers where we want to run them.
+- `Collaborators` are where we provide permissions for other users to our `Image`.
 
 ----------------------------------------
 
