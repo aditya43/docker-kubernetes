@@ -101,6 +101,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Docker Hub
     + Running Docker Registry
     + Running A Private Docker Registry
+    + Registry And Proper TLS
+    + Private Docker Registry In Swarm
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -741,6 +743,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     docker stack
     docker secret
     ```
+- **When we're in a `Swarm`, we cannot use an `image` that's only on 1 node. A `Swarm` has to be able to pull `Images` on all nodes from some repository in a `registry` that they can all reach.**
 
 ```diff
 + How to check if swarm mode is activated and how to activate it
@@ -1294,6 +1297,36 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - `Secure by Default`: Docker won't talk to registry without `HTTPS`.
 - Except, `localhost (127.0.0.0/8)`.
 - For remote `self-signed TLS`, enable `insecure-registry` option in engine.
+
+```diff
++ Private Docker Registry In Swarm
+```
+- Works the same way as localhost.
+- Only difference is we don't have to run `docker run` command. We have to run `docker service` command or a `stack file`.
+- Because of `Routing Mesh`, all nodes can see `127.0.0.1:5000`.
+- We don't have to enable `insecure registry` because that's already enabled by `Docker Engine`.
+- Remember to decide how to store Images (volume driver).
+- **When we're in a `Swarm`, we cannot use an `image` that's only on one node. A `Swarm` has to be able to pull `Images` on all nodes from some repository in a `registry` that they can all reach.**
+- **Note:** All nodes must be able to access `images`.
+> **Pro Tip:** Use a hosted `SaaS Registry` if possible.
+- Following commands demonstrate `How to run Private Docker Registry In Swarm?`:
+    * Go to [https://labs.play-with-docker.com](https://labs.play-with-docker.com).
+    * Start session and click on wrench/spanner icon and launch `5 Managers And No Workers` template.
+    * Commands:
+        ```sh
+        # http://play-with-docker.com
+        docker node ls
+        docker service create --name registry --publish 5000:5000 registry
+        docker service ps registry
+        docker pull hello-world
+        docker tag hello-world 127.0.0.1:5000/hello-world
+        docker push 127.0.0.1:5000/hello-world
+        docker pull nginx
+        docker tag nginx 127.0.0.1:5000/nginx
+        docker push 127.0.0.1:5000/nginx
+        docker service create --name nginx -p 80:80 --replicas 5 --detach=false 127.0.0.1:5000/nginx
+        docker service ps nginx
+        ```
 
 ----------------------------------------
 
