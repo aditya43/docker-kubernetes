@@ -94,6 +94,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + Where do we see Docker Healthcheck status?
     + Healthcheck Docker Run Example
+    + Healthcheck in Dockerfile
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1189,6 +1190,35 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         --health-timeout=2s \
         --health-start-period=15s \
         elasticsearch:2
+    ```
+
+```diff
++ Healthcheck in Dockerfile
+```
+- Basic `HEALTHCHECK` command in `Dockerfile`:
+    ```yaml
+    HEALTHCHECK curl -f http://localhost/ || false
+    ```
+- Custom options with `HEALTHCHECK` command in `Dockerfile`:
+    ```yaml
+    HEALTHCHECK --timeout=2s --interval=3s --retries=3 \
+    CMD curl -f http://localhost/ || exit 1
+    ```
+- All options for `healthcheck` command in `Dockerfile`:
+    ```sh
+    # How often it should check `healthcheck`.
+    --interval=DURATION # Default 30s
+
+    # How long it should wait before marking Container `unhealthy`.
+    --timeout=DURATION # Default 30s
+
+    # When should it fire first `healthcheck` command. This gives us
+    # ability to specify longer wait period than first 30 seconds.
+    --start-period=DURATION # Default 0s.
+
+    # Max number of times it should run `healthcheck` before
+    # it marks that container `unhealthy`.
+    --retries=N # Default 3.
     ```
 
 ----------------------------------------
