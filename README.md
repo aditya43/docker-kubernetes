@@ -203,6 +203,26 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys)
 - Only one host for production environment. What to use: docker-compose or single node swarm?
     * [https://github.com/BretFisher/ama/issues/8](https://github.com/BretFisher/ama/issues/8)
+- Kubernetes Components:
+    * [https://kubernetes.io/docs/concepts/overview/components/#master-components](https://kubernetes.io/docs/concepts/overview/components/#master-components)
+- `MikroK8s` for Linux Hosts:
+    * [https://github.com/ubuntu/microk8s](https://github.com/ubuntu/microk8s)
+- `Minikube` Download:
+    * [https://github.com/kubernetes/minikube/releases/](https://github.com/kubernetes/minikube/releases/)
+- Install `kubectl` on Windows when you don't have `Docker Desktop`:
+    * [https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows)
+- `Kubernetes Service`:
+    * [https://kubernetes.io/docs/concepts/services-networking/service/](https://kubernetes.io/docs/concepts/services-networking/service/)
+- `Kubernetes Namespaces`:
+    * [https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+- `Kubernetes Pod Overview`:
+    * [https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/)
+- `kubectl` for `Docker Users`:
+    * [https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/](https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/)
+- **`kubectl` Cheat Sheet**:
+    * [https://kubernetes.io/docs/reference/kubectl/cheatsheet/](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- `Stern (Multi pod and container log tailing for Kubernetes)` for better multi-node log viewing at the CLI:
+    * [https://github.com/wercker/stern](https://github.com/wercker/stern)
 
 ----------------------------------------
 
