@@ -119,7 +119,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - Kubernetes In A Browser
     + Kubernetes Architecture Terminology
     ```
-- [Kubernetes Container Abstractions](#kubernetes-container-abstractions)
+- [Kractubernetes Container Abstions](#kubernetes-container-abstractions)
+    ```diff
+    + Kubernetes Container Abstractions
+    + Kubernetes Run, Create and Apply
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1463,6 +1467,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ----------------------------------------
 
 ## Kubernetes Container Abstractions
+```diff
++ Kubernetes Container Abstractions
+```
 - **Pod**: One or more Containers running together on one `Node`.
     * `Pod` is the basic unit of deployment.
     * Containers are always in `Pod`.
@@ -1487,6 +1494,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `Secrets`.
     * `ConfigMaps`.
     * And more..
+
+```diff
++ Kubernetes Run, Create and Apply
+```
+- `kubectl run`: This command is changing to be only for `Pod` creation.
+- `kubectl create`: Create some resources via CLI or YAML.
+- `kubectl apply`: Create/update anything via YAML.
 
 ----------------------------------------
 
