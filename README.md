@@ -124,6 +124,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Kubernetes Container Abstractions
     + Kubernetes Run, Create and Apply
     ```
+- [Kubernetes - Basic Commands](#kubernetes---basic-commands)
+    ```diff
+    + Creating First Pods
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1501,6 +1505,27 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - `kubectl run`: This command is changing to be only for `Pod` creation.
 - `kubectl create`: Create some resources via CLI or YAML.
 - `kubectl apply`: Create/update anything via YAML.
+
+----------------------------------------
+
+## Kubernetes - Basic Commands
+```diff
++ Creating First Pods
+```
+- **Create**:
+    ```sh
+    kubectl version
+    kubectl run my-nginx --image nginx
+    kubectl get pods
+    kubectl get all
+    ```
+- **Cleanup**
+    ```sh
+    kubectl get pods
+    kubectl get all
+    kubectl delete deployment my-nginx
+    kubectl get all
+    ```
 
 ----------------------------------------
 
