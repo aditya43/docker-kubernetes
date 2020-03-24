@@ -110,6 +110,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Why Kubernetes
     + Kubernetes vs. Swarm
     ```
+- [Kubernetes Architecture Terminology](#kubernetes-architecture-terminology)
+    ```diff
+    + Architecture Terminology
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1346,9 +1350,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - `Kubernetes` runs on top of Docker (usually) as a set of APIs in Containers.
 - `Kubernetes` provides set of `APIs` or `CLI` to manage Containers across servers/nodes.
 - Like in Docker we were using `docker` command a lot, in `Kubernetes` we use `kubectl (kube control)` command.
-- `kubectl` is also referred to as `Kube Control` tool or `Kube Cuddle` tool or `Koob Control` etc. but the standard name from official repo is now `Kube Control`.
+- `kubectl` is also referred to as `Cube Control` tool or `Kube Cuddle` tool or `Koob Control` etc. but the standard name from official repo is now `Cube Control`.
 - Many cloud vendors provide `Kubernetes` as a service to run our Containers.
 - Many vendors make a `distribution` of `Kubernetes`. It's similar to the concept of `linux distribution`. For e.g. same `linux kernel` is running of different `distributions` of `linux`.
+- **In short, `Kubernetes` is a series of Containers, CLI's and configurations.**
 
 ```diff
 + Why Kubernetes
@@ -1392,6 +1397,29 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - i.e. Picking solution isn't 100% rational.
         - Trendy, will benefit our career.
         - CIO/CTO Checkbox.
+
+----------------------------------------
+
+## Kubernetes Architecture Terminology
+```diff
++ Architecture Terminology
+```
+- **`Kubernetes`**:
+    * The whole orchestration system.
+    * Shortly mentioned as `K8s` or `Kube`.
+- **`Kubectl`**:
+    * `Kubectl` stands for `Cube Control`.
+    * It's a CLI to configure `Kubernetes` and manage apps.
+- **`Node`**:
+    * `Node` is a single server in the `Kubernetes Cluster`.
+- **`Kubelet`**:
+    * `Kubelets` are the `Kubernetes Agent` running on nodes.
+- **`Control Plane`**:
+    * Sometimes called as `master`.
+    * `Control Plane` are the set of Containers that manage the `cluster`.
+    * `Control Plane` includes `API Server`, `Scheduler`, `Controller Manager`, `etcd`, `coreDNS` and more..
+- **`Kube-Proxy`**:
+    * It's for networking in `Control Plane`..
 
 ----------------------------------------
 
