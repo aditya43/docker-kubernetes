@@ -1406,6 +1406,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 + Kubernetes Installation
 ```
 - **Docker Desktop**:
+    * Best one! It provides many things out of the box.
     * Enable `Kubernetes` in Docker's settings and installation is done!
     * Sets up everything inside Docker's existing `Linux VM`.
 - **Docker Toolbox on Windows**: `MiniKube`
