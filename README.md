@@ -113,6 +113,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Kubernetes Installation And Architecture](#kubernetes-installation-and-architecture)
     ```diff
     + Kubernetes Installation
+        - Docker Desktop
+        - Docker Toolbox on Windows
+        - Linux or Linux VM in Cloud
+        - Kubernetes In A Browser
     + Kubernetes Architecture Terminology
     ```
 - [Generic Examples](#generic-examples)
@@ -1420,7 +1424,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `MiniKube` has similar to `docker-machine` experience.
     * Creates a `VirtualBox VM` with `Kubernetes` master setup.
     * **We separately have to install `kubectl` for Windows.**
-- **Linux or VM**: `MicroK8s`
+- **Linux or Linux VM in Cloud**: `MicroK8s`
     * If we are using `Linux OS` or any `VM` with `Linux` on it, we should use `MicroK8s`.
     * `MicroK8s` is made by `Ubuntu`.
     * `MicroK8s` installs `Kubernetes` right on the OS.
