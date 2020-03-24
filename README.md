@@ -110,9 +110,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Why Kubernetes
     + Kubernetes vs. Swarm
     ```
-- [Kubernetes Architecture Terminology](#kubernetes-architecture-terminology)
+- [Kubernetes Installation And Architecture](#kubernetes-installation-and-architecture)
     ```diff
-    + Architecture Terminology
+    + Kubernetes Installation
+    + Kubernetes Architecture Terminology
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1400,9 +1401,25 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ----------------------------------------
 
-## Kubernetes Architecture Terminology
+## Kubernetes Installation And Architecture
 ```diff
-+ Architecture Terminology
++ Kubernetes Installation
+```
+- **Docker Desktop**:
+    * Enable `Kubernetes` in Docker's settings and installation is done!
+    * Sets up everything inside Docker's existing `Linux VM`.
+- **Docker Toolbox on Windows**: `MiniKube`
+    * If we're using `Docker Toolbox on Windows` then we should use `MiniKube`.
+- **Linux or VM**: `MicroK8s`
+    * If we are using `Linux OS` or any `VM` with `Linux` on it, we should use `MicroK8s`.
+    * `MicroK8s` is made by `Ubuntu`.
+    * `MicroK8s` installs `Kubernetes` right on the OS.
+- **Kubernetes In A Browser**:
+    * Try [https://labs.play-with-k8s.com](https://labs.play-with-k8s.com)
+    * Or try [https://www.katacoda.com/courses/kubernetes/playground](https://www.katacoda.com/courses/kubernetes/playground)
+
+```diff
++ Kubernetes Architecture Terminology
 ```
 - **`Kubernetes`**:
     * The whole orchestration system.
