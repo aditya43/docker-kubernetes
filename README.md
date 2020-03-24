@@ -126,7 +126,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```
 - [Kubernetes - Basic Commands](#kubernetes---basic-commands)
     ```diff
-    + Creating First Pods
+    + Creating First Pods - nginx
+    + Scaling Replica Sets - Apache Httpd
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1510,7 +1511,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ## Kubernetes - Basic Commands
 ```diff
-+ Creating First Pods
++ Creating First Pods - nginx
 ```
 - **Create**:
     ```sh
@@ -1524,6 +1525,24 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     kubectl get pods
     kubectl get all
     kubectl delete deployment my-nginx
+    kubectl get all
+    ```
+
+```diff
++ Scaling Replica Sets - Apache Httpd
+```
+- **Create**:
+    ```sh
+    kubectl run my-apache --image httpd # 'run' gives us a single 'pod' or 'replica'
+    kubectl get all
+    ```
+- **Scale**
+    ```sh
+    # Use either below command to scale:
+    kubectl scale deploy/my-apache --replicas 2
+    # Or use following command:
+    # kubectl scale deployment my-apache --replicas 2 # Both above and this command are same.
+
     kubectl get all
     ```
 
