@@ -1424,6 +1424,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * If we are using `Linux OS` or any `VM` with `Linux` on it, we should use `MicroK8s`.
     * `MicroK8s` is made by `Ubuntu`.
     * `MicroK8s` installs `Kubernetes` right on the OS.
+    * `MicroK8s` installs `Kubernetes` (without Docker Engine) or `localhost` (Linux).
+    * Uses `snap` (rather than `apt` or `yum`) for install. So we have to install `snap` first on our Linux OS. `snap` can be installed using `apt-get` or `yum`.
+    * Control the `MicroK8s service` via `microk8s.` commands. For e.g. `microk8s.enable` command.
+    * `kubectl` accessible via `microk8s.kubectl`. It's better to add alias for this command in our `bash/zsh` profile:
+        - `alias kubectl=microk8s.kubectl`.
 - **Kubernetes In A Browser**:
     * Easy to get started.
     * Downside is it doesn't keep our environments. They are not saved.
