@@ -119,6 +119,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - Kubernetes In A Browser
     + Kubernetes Architecture Terminology
     ```
+- [Kubernetes Container Abstractions](#kubernetes-container-abstractions)
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1458,6 +1459,34 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `Control Plane` includes `API Server`, `Scheduler`, `Controller Manager`, `etcd`, `coreDNS` and more..
 - **`Kube-Proxy`**:
     * It's for networking in `Control Plane`..
+
+----------------------------------------
+
+## Kubernetes Container Abstractions
+- **Pod**: One or more Containers running together on one `Node`.
+    * `Pod` is the basic unit of deployment.
+    * Containers are always in `Pod`.
+    * We don't deploy Containers independently. Instead, Containers are inside `Pods` and we deploy `Pods`.
+- **Controller**: For creating/updating `Pods` and other objects.
+    * `Controllers` are on top of `Pods` and we use them for creating/updating `Pods` and other objects.
+    * It's a differencing engine that has many types.
+    * There are many types of `Controllers` such as:
+        - `Deployment Controller`.
+        - `ReplicaSet Controller`.
+        - `StatefulSet Controller`.
+        - `DemonSet Controller`.
+        - `Job Controller`.
+        - `CronJob Controller`.
+        - And lot more..
+- **Service**: The `Service` is a little but different in `Kubernetes` than it is in `Swarm`.
+    * A `Service` is specifically the endpoint that we give to a set of `Pods`, often when we use a `Controller` For e.g. `deployment controller` to deploy a set of `replica pods`, we would then set a `service` on that.
+    * `Service` means a persistent endpoint in the `cluster` so that everything else can acess that set of `Pods` at a specific `DNS name` and `port`.
+- **Namespace**: Filtered group of objects in a `cluster`.
+    * It's an optional, advanced feature.
+- There are many other things to `Kubernetes` such as:
+    * `Secrets`.
+    * `ConfigMaps`.
+    * And more..
 
 ----------------------------------------
 
