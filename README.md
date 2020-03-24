@@ -119,7 +119,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - Kubernetes In A Browser
     + Kubernetes Architecture Terminology
     ```
-- [Kractubernetes Container Abstions](#kubernetes-container-abstractions)
+- [Kubernetes Container Abstractions](#kubernetes-container-abstractions)
     ```diff
     + Kubernetes Container Abstractions
     + Kubernetes Run, Create and Apply
@@ -128,6 +128,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + Creating First Pods - nginx
     + Scaling Replica Sets - Apache Httpd
+    + Inspecting Kubernetes Objects - Apache Httpd
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1533,7 +1534,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```
 - **Create**:
     ```sh
-    kubectl run my-apache --image httpd # 'run' gives us a single 'pod' or 'replica'
+    kubectl run my-apache --image httpd     # 'run' gives us a single 'pod' or 'replica'
     kubectl get all
     ```
 - **Scale**
@@ -1544,6 +1545,38 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     # kubectl scale deployment my-apache --replicas 2 # Both above and this command are same.
 
     kubectl get all
+    ```
+
+```diff
++ Inspecting Kubernetes Objects - Apache Httpd
+```
+- **Create**:
+    ```sh
+    kubectl run my-apache --image httpd     # 'run' gives us a single 'pod' or 'replica'
+    kubectl scale deploy/my-apache --replicas 2     # Scale it to 2 replica sets.
+    kubectl get all
+    ```
+- **Inspect Kubernetes Objects Commands**
+    ```sh
+    kubectl get pods
+
+    # Get Container logs
+    kubectl logs deployment/my-apache
+    kubectl logs deployment/my-apache --follow --tail 1
+    kubectl logs -l run=my-apache   # '-l' is for label.
+
+    # Get bunch of details about an object, including events!
+    kubectl get pods
+    kubectl describe pod/my-apache-<pod id>
+
+    # Watch a command (without needing 'watch')
+    kubectl get pods -w     # Run this command in one terminal window.
+    kubectl delete pod/my-apache-<pod id>   # Run this command in another terminal window.
+    kubectl get pods    # Run this command in another terminal window.
+    ```
+- **Cleanup**
+    ```sh
+    kubectl delete deployment my-apache
     ```
 
 ----------------------------------------
