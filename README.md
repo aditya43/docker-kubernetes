@@ -1409,6 +1409,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * Best one! It provides many things out of the box.
     * Enable `Kubernetes` in Docker's settings and installation is done!
     * Sets up everything inside Docker's existing `Linux VM`.
+    * Runs/Configures `Kubernetes Master Containers`.
+    * Manages `kubectl` install and `certs`.
+    * `Docker Desktop Enterprise (paid)` allows us to swap between different versions of `Kubernetes` on the fly.
 - **Docker Toolbox on Windows**: `MiniKube`
     * If we're using `Docker Toolbox on Windows` then we should use `MiniKube`.
 - **Linux or VM**: `MicroK8s`
