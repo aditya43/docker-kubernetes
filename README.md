@@ -1414,6 +1414,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `Docker Desktop Enterprise (paid)` allows us to swap between different versions of `Kubernetes` on the fly.
 - **Docker Toolbox on Windows**: `MiniKube`
     * If we're using `Docker Toolbox on Windows` then we should use `MiniKube`.
+    * We don't even need `Docker Toolbox` installed. We can run `MiniKube` separately.
+    * Download `MiniKube` windows installer `minikube-installer.exe` from GitHub.
+    * Type `minikube start` in shell after installation.
+    * `MiniKube` has similar to `docker-machine` experience.
+    * Creates a `VirtualBox VM` with `Kubernetes` master setup.
+    * **We separately have to install `kubectl` for Windows.**
 - **Linux or VM**: `MicroK8s`
     * If we are using `Linux OS` or any `VM` with `Linux` on it, we should use `MicroK8s`.
     * `MicroK8s` is made by `Ubuntu`.
