@@ -1415,6 +1415,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `MicroK8s` is made by `Ubuntu`.
     * `MicroK8s` installs `Kubernetes` right on the OS.
 - **Kubernetes In A Browser**:
+    * Easy to get started.
+    * Downside is it doesn't keep our environments. They are not saved.
     * Try [https://labs.play-with-k8s.com](https://labs.play-with-k8s.com)
     * Or try [https://www.katacoda.com/courses/kubernetes/playground](https://www.katacoda.com/courses/kubernetes/playground)
 
