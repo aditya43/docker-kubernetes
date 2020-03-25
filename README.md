@@ -239,6 +239,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://kubernetes.io/docs/concepts/services-networking/service/#nodeport](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport)
 - `CoreDNS` for `Kubernetes`:
     * [https://www.coredns.io/plugins/kubernetes/](https://www.coredns.io/plugins/kubernetes/)
+- `Kubernetes` DNS Specifications:
+    * [https://github.com/kubernetes/dns/blob/master/docs/specification.md](https://github.com/kubernetes/dns/blob/master/docs/specification.md)
 
 ----------------------------------------
 
