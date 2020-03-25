@@ -130,6 +130,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Scaling Replica Sets - Apache Httpd
     + Inspecting Kubernetes Objects - Apache Httpd
     ```
+- [Kubernetes Services](#kubernetes-services)
+    ```diff
+    + ClusterIP (default)
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1598,6 +1602,29 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```sh
     kubectl delete deployment my-apache
     ```
+
+----------------------------------------
+
+## Kubernetes Services
+- **A `service` is a stable address for `pod(s)`.**
+- If we want to connect to `pod(s)`, we need a `service`.
+- `kubectl expose` command creates a `service` for existing `pods`.
+- `CoreDNS` allows us to resolve `services` by their `names`.
+- There are four different types of `services` in `Kubernetes`:
+    * `ClusterIP`
+    * `NodePort`
+    * `LoadBalancer`
+    * `ExternalName`
+
+```diff
++ ClusterIP (default)
+```
+- It's only available in the `cluster`.
+- This is about one set of `Kubernetes Pods` talking to another set of `Kubernetes Pods`.
+- It gets it's own  `DNS` stress. That's going to be the `DNS` address in the `core DNS` control plane.
+- Single, internal virtual IP allocated. In other words, it's going to get an IP address in that virtual IP address space inside the cluster. And that allows our other `pods` running in the cluster to talk to this `service` using the port of the `service`.
+- Only reachable from within `cluster (nodes and pods)`.
+- `Pods` can reach service on apps port number.
 
 ----------------------------------------
 
