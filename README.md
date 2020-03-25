@@ -1618,6 +1618,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `LoadBalancer`
     * `ExternalName`
 - `ClusterIP` and `NodePort` are the `services` which are always available in `Kubernetes`.
+- There's one more way, external traffic can get inside our `Kubernetes` - It is called `Ingress`.
 
 ```diff
 + Kubernetes Services - ClusterIP (default)
@@ -1644,6 +1645,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - When we create `LoadBalancer` service, it will automatically create `ClusterIP` and `NodePort` services internally.
 - Only available when `infra` provider gives us a `LB (e.g. AWS ELB etc)`.
 - Creates `ClusterIP` and `NodePort` services and then tells `LB` to send to `NodePort`.
+
+```diff
++ Kubernetes Services - ExternalName
+```
+- This `service` is used less often.
+- Adds `CNAME DNS` record to `CoreDNS` only.
+- Not used for `Pods`, but for giving `Pods` a `DNS Name` to use for something outside `Kubernetes`.
 
 ----------------------------------------
 
