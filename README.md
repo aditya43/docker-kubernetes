@@ -132,7 +132,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```
 - [Kubernetes Services](#kubernetes-services)
     ```diff
-    + ClusterIP (default)
+    + Kubernetes Services - ClusterIP (default)
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1615,9 +1615,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `NodePort`
     * `LoadBalancer`
     * `ExternalName`
+- `ClusterIP` and `NodePort` are the `services` which are always available in `Kubernetes`.
 
 ```diff
-+ ClusterIP (default)
++ Kubernetes Services - ClusterIP (default)
 ```
 - It's only available in the `cluster`.
 - This is about one set of `Kubernetes Pods` talking to another set of `Kubernetes Pods`.
@@ -1625,6 +1626,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Single, internal virtual IP allocated. In other words, it's going to get an IP address in that virtual IP address space inside the cluster. And that allows our other `pods` running in the cluster to talk to this `service` using the port of the `service`.
 - Only reachable from within `cluster (nodes and pods)`.
 - `Pods` can reach service on apps port number.
+
+```diff
++ Kubernetes Services - NodePort
+```
+- When we create a `NodePort`, we're going to get a `High Port` on each `node` that's assigned to this `service`.
+- Port is open on every `node`'s IP.
+- Anyone can connect (if they can reach `node`).
 
 ----------------------------------------
 
