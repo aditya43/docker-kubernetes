@@ -233,6 +233,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://kubernetes.io/docs/concepts/services-networking/service/](https://kubernetes.io/docs/concepts/services-networking/service/)
 - `Kubernetes Service Types`:
     * [https://kubernetes.io/docs/tutorials/services/](https://kubernetes.io/docs/tutorials/services/)
+- Using a `Kubernetes Service` to Expose Our App:
+    * [https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
 
 ----------------------------------------
 
