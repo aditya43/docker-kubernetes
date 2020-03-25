@@ -1619,6 +1619,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `ExternalName`
 - `ClusterIP` and `NodePort` are the `services` which are always available in `Kubernetes`.
 - There's one more way, external traffic can get inside our `Kubernetes` - It is called `Ingress`.
+- Following 3 service types are additive, each one creates the ones above it:
+    * `ClusterIP`
+    * `NodePort`
+    * `LoadBalancer`
 
 ```diff
 + Kubernetes Services - ClusterIP (default)
@@ -1629,6 +1633,18 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Single, internal virtual IP allocated. In other words, it's going to get an IP address in that virtual IP address space inside the cluster. And that allows our other `pods` running in the cluster to talk to this `service` using the port of the `service`.
 - Only reachable from within `cluster (nodes and pods)`.
 - `Pods` can reach service on apps port number.
+- Following commands are useful for creating `ClusterIP` service:
+    ```sh
+    kubectl get pods -w
+    kubectl create deployment httpenv --image=bretfisher/httpenv
+    kubectl scale deployment/httpenv --replicas=5
+    kubectl expose deployment/httpenv --port 8888
+    kubectl get service
+    kubectl run --generator run-pod/v1 tmp-shell --rm -it --image bretfisher/netshoot -- bash
+    curl httpenv:8888
+    curl [ip of service]:8888
+    kubectl get service
+    ```
 
 ```diff
 + Kubernetes Services - NodePort
@@ -1636,6 +1652,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - When we create a `NodePort`, we're going to get a `High Port` on each `node` that's assigned to this `service`.
 - Port is open on every `node`'s IP.
 - Anyone can connect (if they can reach `node`).
+- `NodePort` service also creates a `ClusterIP` internally.
 
 ```diff
 + Kubernetes Services - LoadBalancer
