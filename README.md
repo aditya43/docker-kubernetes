@@ -229,6 +229,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * [https://kubernetes.io/docs/reference/kubectl/cheatsheet/](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - `Stern (Multi pod and container log tailing for Kubernetes)` for better multi-node log viewing at the CLI:
     * [https://github.com/wercker/stern](https://github.com/wercker/stern)
+- What is `Kubernetes Service`:
+    * [https://kubernetes.io/docs/concepts/services-networking/service/](https://kubernetes.io/docs/concepts/services-networking/service/)
 - `Kubernetes Service Types`:
     * [https://kubernetes.io/docs/tutorials/services/](https://kubernetes.io/docs/tutorials/services/)
 
