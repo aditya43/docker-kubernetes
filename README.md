@@ -133,6 +133,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Kubernetes Services](#kubernetes-services)
     ```diff
     + Kubernetes Services - ClusterIP (default)
+    + Kubernetes Services - NodePort
+    + Kubernetes Services - LoadBalancer
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1633,6 +1635,15 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - When we create a `NodePort`, we're going to get a `High Port` on each `node` that's assigned to this `service`.
 - Port is open on every `node`'s IP.
 - Anyone can connect (if they can reach `node`).
+
+```diff
++ Kubernetes Services - LoadBalancer
+```
+- This `service` is mostly used in `Clouds`.
+- It controls a `LB` endpoint external to the cluster.
+- When we create `LoadBalancer` service, it will automatically create `ClusterIP` and `NodePort` services internally.
+- Only available when `infra` provider gives us a `LB (e.g. AWS ELB etc)`.
+- Creates `ClusterIP` and `NodePort` services and then tells `LB` to send to `NodePort`.
 
 ----------------------------------------
 
