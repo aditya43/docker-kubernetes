@@ -1662,6 +1662,18 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - When we create `LoadBalancer` service, it will automatically create `ClusterIP` and `NodePort` services internally.
 - Only available when `infra` provider gives us a `LB (e.g. AWS ELB etc)`.
 - Creates `ClusterIP` and `NodePort` services and then tells `LB` to send to `NodePort`.
+- Following commands are useful for creating a `NodePort` and `LoadBalancer` service:
+    ```sh
+    kubectl get all
+    kubectl expose deployment/httpenv --port 8888 --name httpenv-np --type NodePort
+    kubectl get services
+    curl localhost:32334
+    kubectl expose deployment/httpenv --port 8888 --name httpenv-lb --type LoadBalancer
+    kubectl get services
+    curl localhost:8888
+    kubectl delete service/httpenv service/httpenv-np
+    kubectl delete service/httpenv-lb deployment/httpenv
+    ```
 
 ```diff
 + Kubernetes Services - ExternalName
