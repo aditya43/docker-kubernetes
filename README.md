@@ -1,5 +1,5 @@
-## About This Project
-Docker and Kubernetes with Swarm. My personal notes, projects and configurations.
+## Docker and Kubernetes with Swarm
+My personal notes, projects and configurations.
 
 ## Author
 Aditya Hajare ([Linkedin](https://in.linkedin.com/in/aditya-hajare)).
