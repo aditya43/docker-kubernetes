@@ -1404,7 +1404,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - `Kubernetes` runs on top of Docker (usually) as a set of APIs in Containers.
 - `Kubernetes` provides set of `APIs` or `CLI` to manage Containers across servers/nodes.
 - Like in Docker we were using `docker` command a lot, in `Kubernetes` we use `kubectl (kube control)` command.
-- `kubectl` is also referred to as `Cube Control` tool or `Kube Cuddle` tool or `Koob Control` etc. but the standard name from official repo is now `Cube Control`.
+- `kubectl` is also referred to as `Kube Control` tool or `Kube Cuddle` tool or `Koob Control` etc. but the standard name from official repo is now `Kube Control`.
 - Many cloud vendors provide `Kubernetes` as a service to run our Containers.
 - Many vendors make a `distribution` of `Kubernetes`. It's similar to the concept of `linux distribution`. For e.g. same `linux kernel` is running of different `distributions` of `linux`.
 - **In short, `Kubernetes` is a series of Containers, CLI's and configurations.**
@@ -1495,7 +1495,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * The whole orchestration system.
     * Shortly mentioned as `K8s` or `Kube`.
 - **`Kubectl`**:
-    * `Kubectl` stands for `Cube Control`.
+    * `Kubectl` stands for `Kube Control`.
     * It's a CLI to configure `Kubernetes` and manage apps.
 - **`Node`**:
     * `Node` is a single server in the `Kubernetes Cluster`.
