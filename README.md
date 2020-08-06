@@ -1535,6 +1535,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **Namespace**: Filtered group of objects in a `cluster`.
     * It's an optional, advanced feature.
     * It's a simply a filter for our views when we are using `kubectl` command line.
+    * For e.g. When we are using Docker desktop, it defaults to the `default namespace` and filters out all of the system containers running `Kubernetes` in the background. Because normally, we don't want to see them containers when working with `kubectl` command line.
 - There are many other things to `Kubernetes` such as:
     * `Secrets`.
     * `ConfigMaps`.
