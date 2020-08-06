@@ -1534,6 +1534,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * `Service` means a persistent endpoint in the `cluster` so that everything else can acess that set of `Pods` at a specific `DNS name` and `port`.
 - **Namespace**: Filtered group of objects in a `cluster`.
     * It's an optional, advanced feature.
+    * It's a simply a filter for our views when we are using `kubectl` command line.
 - There are many other things to `Kubernetes` such as:
     * `Secrets`.
     * `ConfigMaps`.
