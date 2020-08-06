@@ -1529,7 +1529,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - `Job Controller`.
         - `CronJob Controller`.
         - And lot more..
-- **Service**: The `Service` is a little but different in `Kubernetes` than it is in `Swarm`.
+- **Service**: The `Service` is a little bit different in `Kubernetes` than it is in `Swarm`.
     * A `Service` is specifically the endpoint that we give to a set of `Pods`, often when we use a `Controller` For e.g. `deployment controller` to deploy a set of `replica pods`, we would then set a `service` on that.
     * `Service` means a persistent endpoint in the `cluster` so that everything else can acess that set of `Pods` at a specific `DNS name` and `port`.
 - **Namespace**: Filtered group of objects in a `cluster`.
