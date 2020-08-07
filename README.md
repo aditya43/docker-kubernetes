@@ -1629,6 +1629,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - `CoreDNS` allows us to resolve `services` by their `names`.
     * But this only works for services in a same `namespace`. To get all `namespaces`, run `kubectl get namespaces`.
 - `Services` also has **`FQDN (Fully Qualified Domain Name)`**.
+    * We can do CURL hit service with `FQDN` as below:
+    ```sh
+    curl <hostname>.<namespace>.svc.cluster.local
+    ```
 - There are four different types of `services` in `Kubernetes`:
     * `ClusterIP`
     * `NodePort`
