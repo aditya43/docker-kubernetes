@@ -1715,6 +1715,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```
 - `Generators` are like templates. They essentially create the `spec` or specification to apply to `Kubernetes Cluster` based on our command line options.
 - Commands like `Run`, `Create`, `Expose` etc. use helper templates called `Generators`.
+- Every resource in `Kubernetes` has a specification or `spec`. For e.g.
+    ```sh
+    kubectl create deployment aditest --image nginx --dry-run -o yaml
+    ```
+- We can output these templates with **`--dry-run -o yaml`**. We can use these `YAML default`s as a startin point.
 
 ----------------------------------------
 
