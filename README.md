@@ -141,6 +141,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
     + To clean up apt-get cache
     + To get a Shell inside Container
+    + To create a temp POD in cluser and get an interactive shell in it
     + Docker Swarm - Create Our First Service and Scale it Locally
     + Creating a 3-Node Swarm Cluster
     + Scaling Out with Overlay Networking
@@ -1784,6 +1785,15 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - For e.g. To get a `bash` shell inside already running `nginx` Container named as `proxy`:
     ```sh
     docker container exec -it proxy bash
+    ```
+
+```diff
++ To create a temp POD in cluser and get an interactive shell in it
+```
+- This command will create a temporary `POD` in a running cluser and launch an interactive shell inside it.
+- **NOTE:** This temporary `POD` will be deleted once we exit out of the shell.
+    ```sh
+    kubectl run --generator run-pod/v1 tmp-shell --rm -it --image bretfisher/netshoot -- bash
     ```
 
 ```diff
