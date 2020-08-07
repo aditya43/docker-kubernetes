@@ -139,6 +139,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [Kubernetes Management Techniques](#kubernetes-management-techniques)
     ```diff
     + Run, Create, Expose Generators
+    + Generators Example
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1720,6 +1721,20 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     kubectl create deployment aditest --image nginx --dry-run -o yaml
     ```
 - We can output these templates with **`--dry-run -o yaml`**. We can use these `YAML default`s as a startin point.
+- Generators are `opinionated defaults`.
+
+```diff
++ Generators Example
+```
+- Using dry-run with yaml output we can see the generators.
+- Examples:
+    ```sh
+    kubectl create deployment aditest --image nginx --dry-run -o yaml
+    kubectl create job aditest --image nginx --dry-run -o yaml
+
+    # We need the deployment "aditest " to exist before below command works.
+    kubectl expose deployment/aditest --port 80 --dry-run -o yaml
+    ```
 
 ----------------------------------------
 
