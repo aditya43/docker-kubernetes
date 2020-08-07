@@ -136,6 +136,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Kubernetes Services - NodePort
     + Kubernetes Services - LoadBalancer
     ```
+- [Kubernetes Management Techniques](#kubernetes-management-techniques)
+    ```diff
+    + Run, Create, Expose Generators
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1702,6 +1706,15 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - This `service` is used less often.
 - Adds `CNAME DNS` record to `CoreDNS` only.
 - Not used for `Pods`, but for giving `Pods` a `DNS Name` to use for something outside `Kubernetes`.
+
+----------------------------------------
+
+## Kubernetes Management Techniques
+```diff
++ Run, Create, Expose Generators
+```
+- `Generators` are like templates. They essentially create the `spec` or specification to apply to `Kubernetes Cluster` based on our command line options.
+- Commands like `Run`, `Create`, `Expose` etc. use helper templates called `Generators`.
 
 ----------------------------------------
 
