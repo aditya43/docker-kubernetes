@@ -1627,6 +1627,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - If we want to connect to `pod(s)`, we need a `service`.
 - `kubectl expose` command creates a `service` for existing `pods`.
 - `CoreDNS` allows us to resolve `services` by their `names`.
+    * But this only works for services in a same `namespace`. To get all `namespaces`, run `kubectl get namespaces`.
+- `Services` also has **`FQDN (Fully Qualified Domain Name)`**.
 - There are four different types of `services` in `Kubernetes`:
     * `ClusterIP`
     * `NodePort`
