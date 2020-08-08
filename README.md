@@ -142,6 +142,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Generators Example
     + Imperative vs. Declarative
     + Imperative Kubernetes
+    + Declarative Kubernetes
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1760,6 +1761,23 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Imperative is easier for humans at the CLI.
 - Imperative is easier when we know the state.
 - **Imperative is not easy to automate**
+
+```diff
++ Declarative Kubernetes
+```
+- `Declarative` means we don't know the `state`, we just know the `end result` that we want.
+- Example:
+    ```sh
+    kubectl apply -f my-resources.yml
+    ```
+    * We don't know the current state.
+    * We only know what we want the end result to be (yaml contents).
+- Same command each time (tiny exception for delete).
+- Resources can be in a single file, or multiple files (apply a whole dir).
+- Requires understanding the YAML keys and values.
+- More work than `kubectl run` for just starting a `POD`.
+- **The easiest way to automate our orchestration.**
+- The eventual path to **GitOps** happiness.
 
 ----------------------------------------
 
