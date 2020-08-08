@@ -140,6 +140,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + Run, Create, Expose Generators
     + Generators Example
+    + Imperative vs. Declarative
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1736,7 +1737,17 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     kubectl expose deployment/aditest --port 80 --dry-run -o yaml
     ```
 
-----------------------------------------
+```diff
++ Imperative vs. Declarative
+```
+- **Imperative:** Focus on **how** a program operates.
+- **Declarative:** Focus on **what** a program should accomplish.
+- For e.g. Coffee
+    * **Imperative:** I will boil water, scoop out 42 grams of medium-fine grounds, pour over 700g of water, etc.
+    * **Declarative:** Barista, I would like a cup of coffee.
+        - Barista is a engine that works through the steps, including retrying to make a cup of coffee, and is only finished when I have a cup of coffee.
+
+---------------------------------****-------
 
 ## Generic Examples
 ```diff
