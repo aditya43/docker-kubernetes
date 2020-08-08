@@ -143,6 +143,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Imperative vs. Declarative
     + Imperative Kubernetes
     + Declarative Kubernetes
+    + Three Management Approaches
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1755,7 +1756,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Examples: `kubectl run`, `kubectl create deployment`, `kubectl update`.
     * We start with a state we know (no deployment exist).
     * We ask `kubectl run` to create a deployment.
-- More examples of `Imperative` commands: run, expose, scale, edit, create deployment etc.
 - Different commands are required to change that deployment.
 - Different commands are required per object.
 - Imperative is easier to get started.
@@ -1779,6 +1779,23 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - More work than `kubectl run` for just starting a `POD`.
 - **The easiest way to automate our orchestration.**
 - The eventual path to **GitOps** happiness.
+
+```diff
++ Three Management Approaches
+```
+- **Imperative Commands:** run, expose, scale, edit, create deployment etc.
+    * Best for dev/learning/personal projects.
+    * Easy to learn, hardest to manage over time.
+- **Imperative Objects:** `create -f file.yml`, `replace -f file.yml`, `delete...`
+    * Good for `prod` of small environments, single file per command.
+    * Store our changes in git-based yaml files.
+    * Hard to automate.
+- **Declarative Objects:** `apply -f file.yml` or `dir\` or `diff` etc.
+    * **Best for prod, easier to automate.**
+    * Harder to understand and predict changes.
+- **MOST IMPORTANT RULES:**
+    * Don't mix 3 approaches when we have true production dependency.
+    * Store yaml in Git, Git Commit each change before we apply.
 
 ----------------------------------------
 
