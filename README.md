@@ -1755,6 +1755,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Examples: `kubectl run`, `kubectl create deployment`, `kubectl update`.
     * We start with a state we know (no deployment exist).
     * We ask `kubectl run` to create a deployment.
+- More examples of `Imperative` commands: run, expose, scale, edit, create deployment etc.
 - Different commands are required to change that deployment.
 - Different commands are required per object.
 - Imperative is easier to get started.
