@@ -145,6 +145,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Declarative Kubernetes
     + Three Management Approaches
     ```
+- [DevOps Style Kubernetes Using YAML](#devops-style-kubernetes-using-yaml)
+    ```diff
+    + Using kubectl apply
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1796,6 +1800,25 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **MOST IMPORTANT RULES:**
     * Don't mix 3 approaches when we have true production dependency.
     * Store yaml in Git, Git Commit each change before we apply.
+
+----------------------------------------
+
+## DevOps Style Kubernetes Using YAML
+```diff
++ Using kubectl apply
+```
+- Create/Update resource in a file:
+    ```sh
+    kubectl apply -f myfile.yml
+    ```
+- Create/Update a whole directory of yaml:
+    ```sh
+    kubectl apply -f adiYamls/
+    ```
+- Create/Update from a URL:
+    ```sh
+    kubectl apply -f https://aditya.io/pod.yml
+    ```
 
 ----------------------------------------
 
