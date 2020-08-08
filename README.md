@@ -1746,6 +1746,16 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * **Imperative:** I will boil water, scoop out 42 grams of medium-fine grounds, pour over 700g of water, etc.
     * **Declarative:** Barista, I would like a cup of coffee.
         - Barista is a engine that works through the steps, including retrying to make a cup of coffee, and is only finished when I have a cup of coffee.
+- **Imperative Kubernetes:**
+    * Examples: `kubectl run`, `kubectl create deployment`, `kubectl update`.
+        - We start with a state we know (no deployment exist).
+        - We ask `kubectl run` to create a deployment.
+    * Different commands are required to change that deployment.
+    * Different commands are required per object.
+    * Imperative is easier to get started.
+    * Imperative is easier for humans at the CLI.
+    * Imperative is easier when we know the state.
+    * **Imperative is not easy to automate**
 
 ----------------------------------------
 
