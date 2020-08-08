@@ -1747,7 +1747,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * **Declarative:** Barista, I would like a cup of coffee.
         - Barista is a engine that works through the steps, including retrying to make a cup of coffee, and is only finished when I have a cup of coffee.
 
----------------------------------****-------
+----------------------------------------
 
 ## Generic Examples
 ```diff
