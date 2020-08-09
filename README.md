@@ -148,6 +148,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - [DevOps Style Kubernetes Using YAML](#devops-style-kubernetes-using-yaml)
     ```diff
     + Using kubectl apply
+    + Kubernetes Configuration YAML
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1819,6 +1820,19 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```sh
     kubectl apply -f https://aditya.io/pod.yml
     ```
+
+```diff
++ Kubernetes Configuration YAML
+```
+- Kubernetes Configuration File (YAML or JSON).
+- A full description of a resource in Kubernetes is a `manifest`.
+- Each file contains one or more `manifests`.
+- Each `manifest` describes an `API Object` (for e.g. deployment, job, secret).
+- Each `manifest` needs four parts (root/main `key:values` in a file). They are:
+    * **`apiVersion`**
+    * **`kind`**
+    * **`metadata`**
+    * **`spec`**
 
 ----------------------------------------
 
