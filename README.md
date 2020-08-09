@@ -1848,7 +1848,23 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```
 - **metadata**: Only name is required.
 - **spec**: Where all the action is at!
-
+    * We can get all the `keys` for `spec` by running following command:
+        ```sh
+        kubectl explain services.spec
+        ```
+    * We can get all the `keys` for a specific `key` in `spec` by running following command:
+        ```sh
+        kubectl explain services.spec.<TYPE>
+        ```
+    * We can get all the `keys` each `kind` supports:
+        ```sh
+        kubectl explain services --recursive
+        ```
+- sub **spec**: Can have sub spec of other resources.
+    * We can get all the `keys` for sub `spec` of any resource by running following command:
+        ```sh
+        kubectl explain deployment.spec.template.spec.volumes.nfs.server
+        ```
 ----------------------------------------
 
 ## Generic Examples
