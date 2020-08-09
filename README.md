@@ -1883,6 +1883,18 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     kubectl diff -f app.yml
     ```
 
+```diff
++ Labels And Annotations
+```
+- `Labels` goes under `metadata` in YAML.
+    * They are optional.
+    * Simple list of `key:value` for identifying our resource later by `selecting`, `grouping` or `filtering` for it.
+    * Common examples:
+        - `env: prod`
+        - `tier: frontend`
+        - `app: api`
+        - `customer: aditya.com`
+
 ----------------------------------------
 
 ## Generic Examples
