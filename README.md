@@ -149,6 +149,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + Using kubectl apply
     + Kubernetes Configuration YAML
+    + How To Build YAML File
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1833,6 +1834,20 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * **`kind`**
     * **`metadata`**
     * **`spec`**
+
+```diff
++ How To Build YAML File
+```
+- **kind**: We can get a list of resources the cluster supports:
+    ```sh
+    kubectl api-resources
+    ```
+- **apiVersion**: We can get a list of api versions the cluster supports:
+    ```sh
+    kubectl api-versions
+    ```
+- **metadata**: Only name is required.
+- **spec**: Where all the action is at!
 
 ----------------------------------------
 
