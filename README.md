@@ -150,6 +150,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Using kubectl apply
     + Kubernetes Configuration YAML
     + How To Build YAML File
+    + Dry Runs With Apply YAML
     ```
 - [Generic Examples](#generic-examples)
     ```diff
@@ -1865,6 +1866,23 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         ```sh
         kubectl explain deployment.spec.template.spec.volumes.nfs.server
         ```
+
+```diff
++ Dry Runs With Apply YAML
+```
+- **Client Side Only** dry run:
+    ```sh
+    kubectl apply -f app.yml --dry-run
+    ```
+- **Server Side** dry run:
+    ```sh
+    kubectl apply -f app.yml --server-dry-run
+    ```
+- **To See Diff Visually**:
+    ```sh
+    kubectl diff -f app.yml
+    ```
+
 ----------------------------------------
 
 ## Generic Examples
