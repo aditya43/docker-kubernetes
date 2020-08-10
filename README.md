@@ -151,6 +151,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Kubernetes Configuration YAML
     + How To Build YAML File
     + Dry Runs With Apply YAML
+    + Labels And Annotations
     ```
 - [Generic Examples](#generic-examples)
     ```diff
