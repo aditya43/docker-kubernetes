@@ -586,6 +586,18 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Useful YouTube video about `prune`: [https://youtu.be/_4QzP7uwtvI](https://youtu.be/_4QzP7uwtvI)
 
 ```diff
++ To remove all containers and images:
+```
+```sh
+    # Unix
+    docker rm -vf $(docker ps -a -q) # delete all containers including its volumes
+    docker rmi -f $(docker images -a -q) # delete all the images
+
+    # Windows (PowerShell)
+    docker images -a -q | % { docker image rm $_ -f }
+```
+
+```diff
 + To cleanup all dangling images:
 ```
 ```sh
@@ -597,7 +609,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 + To cleanup everything:
 ```
 ```sh
-    docker system prune
+    docker system prune --all
 ```
 
 ```diff
