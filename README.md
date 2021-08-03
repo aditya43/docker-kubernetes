@@ -153,6 +153,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     + Dry Runs With Apply YAML
     + Labels And Annotations
     ```
+- [Kubernetes FAQ](#kubernetes-faq)
+    ```diff
+    + What is Kubernetes
+    + Difference between Docker Swarm and Kuberentes
+    ```
 - [Generic Examples](#generic-examples)
     ```diff
     + Running 3 Containers: nginx (80:80), mysql (3306:3306), httpd (Apache Server - 8080:80)
@@ -1907,6 +1912,20 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - `tier: frontend`
         - `app: api`
         - `customer: aditya.com`
+
+----------------------------------------
+
+## Kubernetes FAQ
+```diff
++ What is Kubernetes
+```
+- Kubernetes is a container orchestration tool that is used for automating the tasks of managing, monitoring, scaling and deployment of containerized applications.
+- It creates groups of containers that can be logically discovered and managed for easy operations on containers.
+
+```diff
++ Difference between Docker Swarm and Kuberentes
+```
+- Docker Swarm is a default container orchestration tool
 
 ----------------------------------------
 
