@@ -1925,7 +1925,15 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ```diff
 + Difference between Docker Swarm and Kuberentes
 ```
-- Docker Swarm is a default container orchestration tool
+- Docker Swarm is a default container orchestration tool that comes with Docker.
+- Docker Swarm can only orchestrate simple Docker Containers.
+- Kuberenetes helps manage much more complex software application containers.
+- Kuberenetes offers support for larger demand production environment.
+- **Docker Swarm can't do auto-scaling.**
+- **Docker Swarm doesn't have a GUI.**
+- **Docker Swarm can deploy rolling updates but can't deploy automatic rollbacks.**
+- **Docker Swarm requires third-party tools like ELK stack for logging and monitoring, while Kuberenetes has integrated tools for the same.**
+- **Docker Swarm can share storage volumes with any containers easily, while Kubernetes can only share storage volumes with containers in the same pod.**
 
 ----------------------------------------
 
