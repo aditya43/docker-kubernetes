@@ -1972,6 +1972,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * It exposes the service externally using the load balancer of our cloud provider.
     * External load balancer routes the Node Port and Cluster IP service which are created automatically.
 
+```diff
++ How to set a static IP for Kubernetes Load Balancer?
+```
+- Kubernetes Master assigns a new IP address.
+- We can set a static IP for Kubernetes load balancer by changing the DNS records whenever Kuberenetes Master assigns a new IP address.
+
 ----------------------------------------
 
 ## Generic Examples
