@@ -1949,6 +1949,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - It preserves the pod lifecycle by ensuring that a given set of containers are all running as they should.
 - The kubelet runs on each node and enables the communication between the master and slave nodes.
 
+```diff
++ What is a kubectl?
+```
+- Kubectl is a Kuberentes command line tool that is used for deplying and managing applications on Kubernetes.
+- Kubectl is specially useful for inspecting the cluster resources, and for creating, updating and deleting the components.
+
 ----------------------------------------
 
 ## Generic Examples
