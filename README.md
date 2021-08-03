@@ -1935,6 +1935,14 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **Docker Swarm requires third-party tools like ELK stack for logging and monitoring, while Kuberenetes has integrated tools for the same.**
 - **Docker Swarm can share storage volumes with any containers easily, while Kubernetes can only share storage volumes with containers in the same pod.**
 
+```diff
++ What is a Heapster?
+```
+- The Heapster lets us do the container cluster monitoring.
+- It lets us do cluster-wide monitoring and event data aggregation.
+- It has native support for Kubernetes.
+
+
 ----------------------------------------
 
 ## Generic Examples
