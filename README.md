@@ -1942,6 +1942,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - It lets us do cluster-wide monitoring and event data aggregation.
 - It has native support for Kubernetes.
 
+```diff
++ What is a kubelet?
+```
+- The kubelet is a service agent that controls and maintains a set of pods by watching for pod specs through the Kubernetes API server.
+- It preserves the pod lifecycle by ensuring that a given set of containers are all running as they should.
+- The kubelet runs on each node and enables the communication between the master and slave nodes.
 
 ----------------------------------------
 
