@@ -1955,6 +1955,23 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Kubectl is a Kuberentes command line tool that is used for deplying and managing applications on Kubernetes.
 - Kubectl is specially useful for inspecting the cluster resources, and for creating, updating and deleting the components.
 
+```diff
++ What are the different types of Kubernetes services?
+```
+- Cluster IP Service.
+    * It is a default type of service whener we create a service and not specify what it would be.
+    * Cluster IP type service can only be reached internally within the cluster.
+    * It is not exposed to the outside world.
+- Node Port Service.
+    * It exposes the service on each node's ip at a static port.
+    * Cluster IP service is created automatically and a Node Port service will route to it.
+- External Name.
+    * Maps the service to the contents of the external name field.
+    * It does it by returning the value for CNAME record.
+- Load Balancer Service.
+    * It exposes the service externally using the load balancer of our cloud provider.
+    * External load balancer routes the Node Port and Cluster IP service which are created automatically.
+
 ----------------------------------------
 
 ## Generic Examples
