@@ -1984,6 +1984,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Kubernetes uses ETCD as a distributed key-value store for all of its data, including metadata and configuration data, and allows nodes in Kuberenetes clusters to read and write data.
 - ETCD represents the state of a cluster at a specific moment in time and is a center for state management and cluster coordination of a Kubernetes cluster.
 
+```diff
++ Can we use many claims out of a persistent volume?
+```
+- Answer = NO!
+- The mapping between `persistentVolume` and `persistentVolumeClaim` is always one to one.
+- Even when we delete the claim, `persistentVolume` still remains as we set `persistentVolumeReclaimPolicy` is set to `Retain` and it will not be resused by any other claim.
+
 ----------------------------------------
 
 ## Generic Examples
