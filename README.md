@@ -1978,6 +1978,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Kubernetes Master assigns a new IP address.
 - We can set a static IP for Kubernetes load balancer by changing the DNS records whenever Kuberenetes Master assigns a new IP address.
 
+```diff
++ What is ETCD?
+```
+- Kubernetes uses ETCD as a distributed key-value store for all of its data, including metadata and configuration data, and allows nodes in Kuberenetes clusters to read and write data.
+- ETCD represents the state of a cluster at a specific moment in time and is a center for state management and cluster coordination of a Kubernetes cluster.
+
 ----------------------------------------
 
 ## Generic Examples
