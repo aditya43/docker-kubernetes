@@ -2011,6 +2011,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Kube-Proxy runs on each of the nodes.
 - It is responsible for directing traffic to the right container based on IP and the port number of incoming request.
 
+```diff
++ What is a Headless Service?
+```
+- It is similar to normal service but it doesn't have a Cluster IP.
+- It enables us to directly reach the pods without the need of accessing it through a proxy.
+
 ----------------------------------------
 
 ## Generic Examples
