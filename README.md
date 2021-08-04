@@ -2024,6 +2024,28 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - The user is not required to know the underlying provisioning.
 - This claim should be created in the same namespace where the pod is created.
 
+```diff
++ What are the different components in Kuberenetes architecture?
+```
+- Master Node:
+    * API Server:
+        - REST API used to manage and manipulate the cluster.
+    * Controller Manager:
+        - Daemon responsible for regulating the cluster in Kubernetes and manage non-terminating control loops.
+    * Scheduler:
+        - Responsible for scheduling tasks on worker node. It also keeps resources utilization data for each of the slave nodes.
+    * ETCD:
+        - Distributed Key-Value storage where we have shared configurations. It is also used for service discovery. It stores all the information about current situation of what the cluster looks like.
+- Worker Node:
+    * Kubelet:
+        - It's job is to get the configuration of pods from the API server and ensure everything is running according to that.
+    * Kube-Proxy:
+        - Behaves like a network proxy and as well as the load balancer for service on a worker node. It directs traffic to particular node based on the ip and port number on incoming request.
+    * Pod:
+        - Smallest unit in the Kubernetes eco-system. It can have one or more containers which can logically run on different nodes.
+    * Container:
+        - Runs on Pod.
+
 ----------------------------------------
 
 ## Generic Examples
