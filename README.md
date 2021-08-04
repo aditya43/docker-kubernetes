@@ -2040,7 +2040,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * Kubelet:
         - It's job is to get the configuration of pods from the API server and ensure everything is running according to that.
     * Kube-Proxy:
-        - Behaves like a network proxy and as well as the load balancer for service on a worker node. It directs traffic to particular node based on the ip and port number on incoming request.
+        - Behaves like a network proxy as well as the load balancer for service on a worker node. It directs traffic to particular node based on the ip and port number on incoming request.
     * Pod:
         - Smallest unit in the Kubernetes eco-system. It can have one or more containers which can logically run on different nodes.
     * Container:
