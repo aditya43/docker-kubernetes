@@ -2017,6 +2017,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - It is similar to normal service but it doesn't have a Cluster IP.
 - It enables us to directly reach the pods without the need of accessing it through a proxy.
 
+```diff
++ What is a PVC (Persistent Volume Claim)?
+```
+- It's a storage requested by Kubernetes for pods.
+- The user is not required to know the underlying provisioning.
+- This claim should be created in the same namespace where the pod is created.
+
 ----------------------------------------
 
 ## Generic Examples
