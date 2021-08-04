@@ -1998,6 +1998,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - In Kuberenetes, we can define update strategy in deployment.
 - We should put `RollingUpdate` as a strategy to ensure no down time.
 
+```diff
++ What is a difference between replication controller and replica sets?
+```
+- **Replication controllers are obsolute now in the latest versions of Kuberenetes.**
+- The only difference between the Replication Controller and Replica Sets is the **Selectors**.
+- Replication Controller don't have Selectors in their specs.
+
 ----------------------------------------
 
 ## Generic Examples
