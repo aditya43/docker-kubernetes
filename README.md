@@ -2063,6 +2063,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 + Can we make sure that pod gets scheduled on a specific worker node?
 ```
 - Pod gets scheduled on worker nodes automatically.
+- To spawn a pod on a particular worker node, we can use **taints and tolerations**.
 
 ----------------------------------------
 
