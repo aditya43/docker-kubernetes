@@ -2052,6 +2052,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - We can pass sensitive information in Kubernetes using **Secrets**.
 - Secrets can be created using YAML and TXT files.
 
+```diff
++ What is a Sematext Docker Agent?
+```
+- It is a log collection agent with events and metrics.
+- It runs as a small container in each Docker host.
+- These agents gather metrics, events, and logs for all cluster nodes and containers.
+
 ----------------------------------------
 
 ## Generic Examples
