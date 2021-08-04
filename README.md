@@ -2005,6 +2005,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - The only difference between the Replication Controller and Replica Sets is the **Selectors**.
 - Replication Controller don't have Selectors in their specs.
 
+```diff
++ What is a a Kube-Proxy?
+```
+- Kube-Proxy runs on each of the nodes.
+- It is responsible for directing traffic to the right container based on IP and the port number of incoming request.
+
 ----------------------------------------
 
 ## Generic Examples
