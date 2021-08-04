@@ -2046,6 +2046,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * Container:
         - Runs on Pod.
 
+```diff
++ How to pass sensitive information in cluster?
+```
+- We can pass sensitive information in Kubernetes using **Secrets**.
+- Secrets can be created using YAML and TXT files.
+
 ----------------------------------------
 
 ## Generic Examples
