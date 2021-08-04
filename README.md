@@ -2059,6 +2059,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - It runs as a small container in each Docker host.
 - These agents gather metrics, events, and logs for all cluster nodes and containers.
 
+```diff
++ Can we make sure that pod gets scheduled on a specific worker node?
+```
+- Pod gets scheduled on worker nodes automatically.
+- To spawn a pod on a particular worker node, we can use **taints and tolerations**.
+
 ----------------------------------------
 
 ## Generic Examples
