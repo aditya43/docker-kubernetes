@@ -1991,6 +1991,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - The mapping between `persistentVolume` and `persistentVolumeClaim` is always one to one.
 - Even when we delete the claim, `persistentVolume` still remains as we set `persistentVolumeReclaimPolicy` is set to `Retain` and it will not be resused by any other claim.
 
+```diff
++ How do you deploy a feature with zero downtime in Kuberenetes?
+```
+- Short answer: We can apply rolling updates.
+- In Kuberenetes, we can define update strategy in deployment.
+- We should put `RollingUpdate` as a strategy to ensure no down time.
+
 ----------------------------------------
 
 ## Generic Examples
