@@ -1915,7 +1915,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ----------------------------------------
 
-## Kubernetes FAQ
+## Kubernetes Frequently Asked Questions:
 ```diff
 + What is Kubernetes
 ```
